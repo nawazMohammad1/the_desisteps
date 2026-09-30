@@ -1,0 +1,4692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="DESISTEPS Shipping Information — Delivery times, order processing, tracking and shipping information.">
+
+  <meta name="theme-color" content="#321b12">
+
+  <title>Shipping | DESISTEPS — Walk Your Tradition</title>
+
+  <!-- =========================================
+       GOOGLE FONTS
+  ========================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- =========================================
+       FONT AWESOME
+  ========================================== -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+    /* =====================================================
+       DESISTEPS SHIPPING PAGE
+    ===================================================== */
+
+    :root {
+
+      --cream: #f7f0e5;
+      --cream-dark: #eadfce;
+
+      --brown: #321b12;
+      --brown-light: #573326;
+
+      --maroon: #7d1f25;
+      --maroon-dark: #541319;
+
+      --gold: #c99b55;
+      --gold-light: #e0bd7d;
+
+      --black: #16120f;
+      --white: #ffffff;
+
+      --text: #2d211b;
+      --muted: #806e62;
+
+      --border: rgba(50, 27, 18, .13);
+
+      --shadow:
+        0 20px 60px rgba(50, 27, 18, .12);
+
+      --shadow-heavy:
+        0 30px 80px rgba(50, 27, 18, .18);
+
+      --transition:
+        .35s cubic-bezier(.22, .61, .36, 1);
+
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      font-family: "DM Sans", sans-serif;
+
+      background: var(--cream);
+
+      color: var(--text);
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    ::selection {
+      background: var(--maroon);
+      color: var(--white);
+    }
+
+
+    /* =====================================================
+       LOADER
+    ===================================================== */
+
+    .loader {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      background: var(--brown);
+
+      color: var(--cream);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-direction: column;
+
+      gap: 8px;
+
+      transition:
+        opacity .6s ease,
+        visibility .6s ease;
+
+    }
+
+    .loader.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+    }
+
+    .loader-symbol {
+
+      width: 70px;
+      height: 70px;
+
+      border: 1px solid var(--gold);
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      color: var(--gold-light);
+
+      font-size: 38px;
+
+      animation:
+        loaderRotate 2s linear infinite;
+
+    }
+
+    .loader strong {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 25px;
+
+      letter-spacing: 5px;
+
+    }
+
+    .loader small {
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      color: var(--gold-light);
+
+      text-transform: uppercase;
+
+    }
+
+    @keyframes loaderRotate {
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      transition:
+        background .4s ease,
+        box-shadow .4s ease;
+
+    }
+
+    .site-header.scrolled {
+
+      background:
+        rgba(247, 240, 229, .95);
+
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 10px 35px rgba(50, 27, 18, .08);
+
+    }
+
+
+    .navbar {
+
+      width: min(1380px, 92%);
+
+      height: 92px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+    .brand-symbol {
+
+      width: 44px;
+      height: 44px;
+
+      border: 1px solid var(--gold);
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      color: var(--maroon);
+
+      font-size: 28px;
+
+      transition: var(--transition);
+
+    }
+
+    .brand:hover .brand-symbol {
+
+      background: var(--maroon);
+
+      color: var(--cream);
+
+      transform: rotate(12deg);
+
+    }
+
+    .brand-text {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+    .brand-text strong {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 23px;
+
+      line-height: 1;
+
+      letter-spacing: 3px;
+
+      color: var(--brown);
+
+    }
+
+    .brand-text small {
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* =====================================================
+       NAV
+    ===================================================== */
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 34px;
+
+    }
+
+    .nav-links a {
+
+      position: relative;
+
+      color: var(--brown-light);
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+    }
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--maroon);
+
+      transition: width .3s ease;
+
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+
+      color: var(--maroon);
+
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+
+      width: 100%;
+
+    }
+
+
+    /* =====================================================
+       NAV SHOP
+    ===================================================== */
+
+    .nav-actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+    }
+
+    .nav-shop {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 12px 18px;
+
+      background: var(--brown);
+
+      color: var(--cream);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      transition: var(--transition);
+
+    }
+
+    .nav-shop:hover {
+
+      background: var(--maroon);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+    .menu-toggle {
+
+      width: 44px;
+      height: 44px;
+
+      display: none;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 5px;
+
+      background: transparent;
+
+    }
+
+    .menu-toggle span {
+
+      width: 23px;
+      height: 2px;
+
+      background: var(--brown);
+
+      transition: .35s ease;
+
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+
+      transform:
+        translateY(7px) rotate(45deg);
+
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+
+      opacity: 0;
+
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+
+      transform:
+        translateY(-7px) rotate(-45deg);
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .shipping-hero {
+
+      min-height: 700px;
+
+      padding:
+        150px 7vw 100px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        radial-gradient(circle at 10% 20%,
+          rgba(201, 155, 85, .16),
+          transparent 30%),
+
+        var(--cream);
+
+    }
+
+
+    .hero-pattern {
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .12;
+
+      background-image:
+
+        linear-gradient(45deg,
+          transparent 48%,
+          var(--gold) 49%,
+          var(--gold) 51%,
+          transparent 52%);
+
+      background-size: 65px 65px;
+
+      pointer-events: none;
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+    }
+
+    .eyebrow i {
+
+      color: var(--gold);
+
+      font-size: 5px;
+
+    }
+
+
+    .hero-content h1 {
+
+      margin-top: 20px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(65px, 8vw, 110px);
+
+      line-height: .85;
+
+      letter-spacing: -3px;
+
+      color: var(--brown);
+
+      font-weight: 600;
+
+    }
+
+    .hero-content h1 span {
+
+      display: block;
+
+      color: var(--maroon);
+
+      font-style: italic;
+
+    }
+
+
+    .hero-content p {
+
+      max-width: 590px;
+
+      margin-top: 30px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      gap: 13px;
+
+      flex-wrap: wrap;
+
+      margin-top: 35px;
+
+    }
+
+
+    .primary-btn,
+    .outline-btn {
+
+      min-height: 52px;
+
+      padding: 0 23px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 11px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition: var(--transition);
+
+    }
+
+
+    .primary-btn {
+
+      background: var(--brown);
+
+      color: var(--cream);
+
+    }
+
+    .primary-btn:hover {
+
+      background: var(--maroon);
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 15px 30px rgba(125, 31, 37, .18);
+
+    }
+
+
+    .outline-btn {
+
+      border: 1px solid var(--border);
+
+      color: var(--brown);
+
+      background:
+        rgba(255, 255, 255, .4);
+
+    }
+
+    .outline-btn:hover {
+
+      border-color: var(--gold);
+
+      transform: translateY(-4px);
+
+    }
+
+
+    /* =====================================================
+       DELIVERY ILLUSTRATION
+    ===================================================== */
+
+    .delivery-art {
+
+      position: relative;
+
+      min-height: 450px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .art-circle {
+
+      width: 390px;
+      height: 390px;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold);
+
+      position: absolute;
+
+      animation:
+        circleFloat 5s ease-in-out infinite;
+
+    }
+
+
+    .art-circle::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 25px;
+
+      border: 1px dashed rgba(125, 31, 37, .35);
+
+      border-radius: 50%;
+
+    }
+
+
+    .art-circle::after {
+
+      content: "द";
+
+      position: absolute;
+
+      inset: 0;
+
+      display: grid;
+
+      place-items: center;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 210px;
+
+      color: rgba(125, 31, 37, .06);
+
+    }
+
+
+    @keyframes circleFloat {
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(8deg);
+      }
+
+    }
+
+
+    .delivery-box {
+
+      width: 230px;
+
+      height: 170px;
+
+      position: relative;
+
+      z-index: 2;
+
+      background: var(--brown);
+
+      border-radius: 5px;
+
+      box-shadow: var(--shadow-heavy);
+
+      transform:
+        rotate(-4deg);
+
+      animation:
+        boxFloat 4s ease-in-out infinite;
+
+    }
+
+
+    .delivery-box::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 0;
+
+      width: 3px;
+
+      height: 100%;
+
+      background: var(--gold);
+
+    }
+
+
+    .delivery-box::after {
+
+      content: "DESISTEPS";
+
+      position: absolute;
+
+      left: 30px;
+
+      bottom: 25px;
+
+      color: var(--gold-light);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 18px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .box-tape {
+
+      position: absolute;
+
+      width: 45px;
+
+      height: 30px;
+
+      left: 50%;
+
+      top: 40px;
+
+      transform: translateX(-50%);
+
+      background: var(--gold);
+
+    }
+
+
+    .delivery-route {
+
+      position: absolute;
+
+      width: 300px;
+
+      height: 100px;
+
+      border-top:
+        2px dashed var(--maroon);
+
+      border-radius: 50%;
+
+      bottom: 80px;
+
+      right: 10px;
+
+      transform: rotate(-10deg);
+
+    }
+
+
+    .route-dot {
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: var(--maroon);
+
+      position: absolute;
+
+      right: -5px;
+
+      top: -7px;
+
+    }
+
+
+    @keyframes boxFloat {
+
+      0%,
+      100% {
+        transform:
+          translateY(0) rotate(-4deg);
+      }
+
+      50% {
+        transform:
+          translateY(-15px) rotate(2deg);
+      }
+
+    }
+
+
+    .hero-tag {
+
+      position: absolute;
+
+      bottom: 40px;
+
+      left: 15px;
+
+      width: 110px;
+      height: 110px;
+
+      border-radius: 50%;
+
+      background: var(--maroon);
+
+      color: var(--cream);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
+      z-index: 5;
+
+      animation:
+        tagFloat 4s ease-in-out infinite;
+
+    }
+
+
+    .hero-tag i {
+
+      color: var(--gold-light);
+
+      font-size: 22px;
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .hero-tag span {
+
+      font-size: 8px;
+
+      letter-spacing: 1.5px;
+
+      line-height: 1.4;
+
+      font-weight: 700;
+
+    }
+
+
+    @keyframes tagFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+    }
+
+
+    /* =====================================================
+       QUICK INFO
+    ===================================================== */
+
+    .quick-info {
+
+      background: var(--white);
+
+      padding:
+        85px 6vw;
+
+    }
+
+
+    .quick-grid {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border:
+        1px solid var(--border);
+
+    }
+
+
+    .quick-card {
+
+      padding: 35px 25px;
+
+      border-right:
+        1px solid var(--border);
+
+      text-align: center;
+
+      transition: var(--transition);
+
+    }
+
+    .quick-card:last-child {
+      border-right: none;
+    }
+
+
+    .quick-card:hover {
+
+      background: var(--cream);
+
+    }
+
+
+    .quick-icon {
+
+      width: 54px;
+      height: 54px;
+
+      margin:
+        0 auto 18px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--brown);
+
+      color: var(--gold-light);
+
+      font-size: 18px;
+
+      transition: var(--transition);
+
+    }
+
+
+    .quick-card:hover .quick-icon {
+
+      background: var(--maroon);
+
+      transform:
+        rotate(-8deg) scale(1.08);
+
+    }
+
+
+    .quick-card h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 26px;
+
+      color: var(--brown);
+
+    }
+
+
+    .quick-card p {
+
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       SECTION COMMON
+    ===================================================== */
+
+    .section {
+
+      padding:
+        110px 6vw;
+
+    }
+
+
+    .section-heading {
+
+      max-width: 650px;
+
+      margin:
+        0 auto 65px;
+
+      text-align: center;
+
+    }
+
+
+    .section-heading h2 {
+
+      margin-top: 12px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(48px, 6vw, 75px);
+
+      line-height: .9;
+
+      color: var(--brown);
+
+    }
+
+
+    .section-heading h2 span {
+
+      color: var(--maroon);
+
+      font-style: italic;
+
+    }
+
+
+    .section-heading p {
+
+      margin: 20px auto 0;
+
+      max-width: 520px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+
+    /* =====================================================
+       SHIPPING PROCESS
+    ===================================================== */
+
+    .process-section {
+
+      background: var(--cream);
+
+    }
+
+
+    .timeline {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      position: relative;
+
+    }
+
+
+    .timeline::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 45px;
+
+      left: 11%;
+
+      right: 11%;
+
+      height: 1px;
+
+      background:
+        linear-gradient(90deg,
+          var(--gold),
+          var(--maroon),
+          var(--gold));
+
+    }
+
+
+    .timeline-step {
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .step-number {
+
+      width: 90px;
+      height: 90px;
+
+      margin: auto;
+
+      border-radius: 50%;
+
+      background: var(--cream);
+
+      border:
+        1px solid var(--gold);
+
+      display: grid;
+
+      place-items: center;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 28px;
+
+      color: var(--maroon);
+
+      transition: var(--transition);
+
+    }
+
+
+    .timeline-step:hover .step-number {
+
+      background: var(--maroon);
+
+      color: var(--gold-light);
+
+      transform:
+        translateY(-8px) rotate(5deg);
+
+      box-shadow:
+        0 15px 35px rgba(125, 31, 37, .18);
+
+    }
+
+
+    .timeline-step h3 {
+
+      margin-top: 25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 27px;
+
+      color: var(--brown);
+
+    }
+
+
+    .timeline-step p {
+
+      max-width: 200px;
+
+      margin: 8px auto 0;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       SHIPPING ZONES
+    ===================================================== */
+
+    .zones-section {
+
+      background: var(--white);
+
+    }
+
+
+    .zones-layout {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .zones-content h2 {
+
+      margin-top: 15px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(48px, 5vw, 70px);
+
+      line-height: .9;
+
+      color: var(--brown);
+
+    }
+
+
+    .zones-content h2 span {
+
+      color: var(--maroon);
+
+      font-style: italic;
+
+    }
+
+
+    .zones-content>p {
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .zone-list {
+
+      margin-top: 30px;
+
+      display: grid;
+
+      gap: 12px;
+
+    }
+
+
+    .zone-item {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 17px 20px;
+
+      border:
+        1px solid var(--border);
+
+      background: var(--cream);
+
+      transition: var(--transition);
+
+    }
+
+
+    .zone-item:hover {
+
+      transform: translateX(8px);
+
+      border-color: var(--gold);
+
+    }
+
+
+    .zone-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+    }
+
+
+    .zone-left i {
+
+      color: var(--maroon);
+
+    }
+
+
+    .zone-left strong {
+
+      font-size: 12px;
+
+      color: var(--brown);
+
+    }
+
+
+    .zone-item>span {
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       INDIA MAP STYLE
+    ===================================================== */
+
+    .india-art {
+
+      min-height: 480px;
+
+      position: relative;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--cream);
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+    }
+
+
+    .india-art::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 390px;
+      height: 390px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(201, 155, 85, .5);
+
+      animation:
+        pulseCircle 4s ease-in-out infinite;
+
+    }
+
+
+    @keyframes pulseCircle {
+
+      0%,
+      100% {
+        transform: scale(.95);
+        opacity: .7;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+
+    }
+
+
+    .map-symbol {
+
+      width: 250px;
+
+      position: relative;
+
+      z-index: 2;
+
+      text-align: center;
+
+    }
+
+
+    .map-symbol i {
+
+      font-size: 190px;
+
+      color: var(--maroon);
+
+      opacity: .9;
+
+    }
+
+
+    .map-symbol strong {
+
+      display: block;
+
+      margin-top: -25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 35px;
+
+      color: var(--brown);
+
+    }
+
+
+    .map-symbol span {
+
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--gold);
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+    }
+
+
+    .location-dot {
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: var(--maroon);
+
+      position: absolute;
+
+      box-shadow:
+        0 0 0 8px rgba(125, 31, 37, .1);
+
+      animation:
+        locationPulse 1.8s infinite;
+
+    }
+
+
+    .dot-one {
+      top: 35%;
+      left: 47%;
+    }
+
+    .dot-two {
+      top: 48%;
+      left: 39%;
+    }
+
+    .dot-three {
+      top: 58%;
+      left: 53%;
+    }
+
+    .dot-four {
+      top: 65%;
+      left: 46%;
+    }
+
+
+    @keyframes locationPulse {
+
+      0% {
+        box-shadow:
+          0 0 0 0 rgba(125, 31, 37, .35);
+      }
+
+      70% {
+        box-shadow:
+          0 0 0 12px rgba(125, 31, 37, 0);
+      }
+
+      100% {
+        box-shadow:
+          0 0 0 0 rgba(125, 31, 37, 0);
+      }
+
+    }
+
+
+    /* =====================================================
+       TRACK ORDER
+    ===================================================== */
+
+    .tracking-section {
+
+      background:
+        linear-gradient(125deg,
+          var(--brown),
+          #43251b);
+
+      color: var(--cream);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .tracking-section::before {
+
+      content: "TRACK";
+
+      position: absolute;
+
+      right: -50px;
+
+      bottom: -90px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 230px;
+
+      color: rgba(224, 189, 125, .035);
+
+      pointer-events: none;
+
+    }
+
+
+    .tracking-layout {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      gap: 80px;
+
+      align-items: center;
+
+    }
+
+
+    .tracking-content h2 {
+
+      margin-top: 15px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(48px, 6vw, 75px);
+
+      line-height: .9;
+
+    }
+
+
+    .tracking-content h2 span {
+
+      color: var(--gold-light);
+
+      font-style: italic;
+
+    }
+
+
+    .tracking-content p {
+
+      margin-top: 20px;
+
+      color: rgba(247, 240, 229, .62);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .tracking-box {
+
+      padding: 35px;
+
+      background: var(--cream);
+
+      color: var(--brown);
+
+      box-shadow: var(--shadow-heavy);
+
+    }
+
+
+    .tracking-box label {
+
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .tracking-input {
+
+      display: flex;
+
+      gap: 10px;
+
+    }
+
+
+    .tracking-input input {
+
+      min-width: 0;
+
+      flex: 1;
+
+      height: 52px;
+
+      padding:
+        0 17px;
+
+      border:
+        1px solid var(--border);
+
+      outline: none;
+
+      background: white;
+
+      color: var(--brown);
+
+    }
+
+
+    .tracking-input input:focus {
+
+      border-color: var(--gold);
+
+    }
+
+
+    .track-btn {
+
+      width: 125px;
+
+      background: var(--maroon);
+
+      color: var(--cream);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      transition: var(--transition);
+
+    }
+
+
+    .track-btn:hover {
+
+      background: var(--brown);
+
+    }
+
+
+    .tracking-result {
+
+      min-height: 25px;
+
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       SHIPPING NOTES
+    ===================================================== */
+
+    .notes-section {
+
+      background: var(--cream);
+
+    }
+
+
+    .notes-grid {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .note-card {
+
+      padding: 32px;
+
+      border:
+        1px solid var(--border);
+
+      background: rgba(255, 255, 255, .45);
+
+      transition: var(--transition);
+
+    }
+
+
+    .note-card:hover {
+
+      transform: translateY(-8px);
+
+      box-shadow: var(--shadow);
+
+      background: var(--white);
+
+    }
+
+
+    .note-card>i {
+
+      font-size: 25px;
+
+      color: var(--maroon);
+
+    }
+
+
+    .note-card h3 {
+
+      margin-top: 20px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 28px;
+
+      color: var(--brown);
+
+    }
+
+
+    .note-card p {
+
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    .faq-section {
+
+      background: var(--white);
+
+    }
+
+
+    .faq-container {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      border-top:
+        1px solid var(--border);
+
+    }
+
+
+    .faq-item {
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .faq-question {
+
+      width: 100%;
+
+      min-height: 75px;
+
+      padding: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      background: transparent;
+
+      color: var(--brown);
+
+      text-align: left;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+    }
+
+
+    .faq-question i {
+
+      width: 32px;
+      height: 32px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid var(--border);
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      transition: .3s ease;
+
+    }
+
+
+    .faq-item.open .faq-question i {
+
+      transform: rotate(45deg);
+
+      background: var(--maroon);
+
+      color: var(--cream);
+
+    }
+
+
+    .faq-answer {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+        max-height .45s ease;
+
+    }
+
+
+    .faq-answer p {
+
+      padding:
+        0 50px 25px 0;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta-section {
+
+      background: var(--cream);
+
+      padding:
+        100px 6vw;
+
+    }
+
+
+    .cta-box {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 75px 40px;
+
+      text-align: center;
+
+      background: var(--maroon);
+
+      color: var(--cream);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .cta-box::before {
+
+      content: "द";
+
+      position: absolute;
+
+      right: -50px;
+      top: -100px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 400px;
+
+      color: rgba(224, 189, 125, .04);
+
+    }
+
+
+    .cta-box .eyebrow {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .cta-box h2 {
+
+      position: relative;
+
+      margin-top: 15px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(50px, 6vw, 80px);
+
+      line-height: .85;
+
+    }
+
+
+    .cta-box h2 span {
+
+      color: var(--gold-light);
+
+      font-style: italic;
+
+    }
+
+
+    .cta-box p {
+
+      position: relative;
+
+      max-width: 500px;
+
+      margin:
+        22px auto 30px;
+
+      color: rgba(247, 240, 229, .68);
+
+      font-size: 13px;
+
+    }
+
+
+    .cta-btn {
+
+      position: relative;
+
+      min-height: 52px;
+
+      padding: 0 25px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      background: var(--cream);
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition: var(--transition);
+
+    }
+
+
+    .cta-btn:hover {
+
+      background: var(--gold-light);
+
+      transform: translateY(-4px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      background: var(--brown);
+
+      color: var(--cream);
+
+      padding:
+        75px 6vw 25px;
+
+    }
+
+
+    .footer-top {
+
+      max-width: 1250px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        2fr 1fr 1fr 1.2fr;
+
+      gap: 50px;
+
+    }
+
+
+    .footer-brand p {
+
+      max-width: 320px;
+
+      margin-top: 20px;
+
+      color: rgba(247, 240, 229, .5);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .footer-logo .brand-symbol {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .footer-logo .brand-text strong {
+
+      color: var(--cream);
+
+    }
+
+
+    .footer-logo .brand-text small {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .social-links {
+
+      display: flex;
+
+      gap: 8px;
+
+      margin-top: 25px;
+
+    }
+
+
+    .social-links a {
+
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid rgba(247, 240, 229, .15);
+
+      color: var(--gold-light);
+
+      transition: var(--transition);
+
+    }
+
+
+    .social-links a:hover {
+
+      background: var(--maroon);
+
+      border-color: var(--maroon);
+
+      transform: translateY(-4px);
+
+    }
+
+
+    .footer-column {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 11px;
+
+    }
+
+
+    .footer-column h4 {
+
+      color: var(--gold-light);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .footer-column a,
+    .footer-column span {
+
+      color: rgba(247, 240, 229, .58);
+
+      font-size: 11px;
+
+      transition: color .3s ease;
+
+    }
+
+
+    .footer-column a:hover {
+
+      color: var(--cream);
+
+    }
+
+
+    .footer-bottom {
+
+      max-width: 1250px;
+
+      margin:
+        60px auto 0;
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(247, 240, 229, .1);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      color: rgba(247, 240, 229, .35);
+
+      font-size: 9px;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* =====================================================
+       FLOATING WHATSAPP
+    ===================================================== */
+
+    .floating-whatsapp {
+
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      z-index: 900;
+
+      height: 52px;
+
+      padding:
+        0 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      background: #25d366;
+
+      color: white;
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 10px 30px rgba(37, 211, 102, .25);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      transition: var(--transition);
+
+    }
+
+
+    .floating-whatsapp i {
+
+      font-size: 21px;
+
+    }
+
+
+    .floating-whatsapp:hover {
+
+      transform:
+        translateY(-5px) scale(1.03);
+
+    }
+
+
+    /* =====================================================
+       REVEAL
+    ===================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(35px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, .61, .36, 1);
+
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 1100
+    ===================================================== */
+
+    @media (max-width: 1100px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .shipping-hero {
+        gap: 40px;
+      }
+
+      .zones-layout {
+        gap: 40px;
+      }
+
+      .tracking-layout {
+        gap: 40px;
+      }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 900
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+
+        position: fixed;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        height:
+          calc(100vh - 78px);
+
+        background:
+          rgba(247, 240, 229, .98);
+
+        backdrop-filter: blur(15px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 28px;
+
+        transform:
+          translateX(100%);
+
+        transition:
+          transform .45s cubic-bezier(.77, 0, .18, 1);
+
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+
+        font-family:
+          "Cormorant Garamond",
+          serif;
+
+        font-size: 30px;
+
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-shop {
+        display: none;
+      }
+
+      .shipping-hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding:
+          140px 25px 80px;
+
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .delivery-art {
+        min-height: 430px;
+      }
+
+      .quick-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .quick-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .quick-card:nth-child(1),
+      .quick-card:nth-child(2) {
+        border-bottom:
+          1px solid var(--border);
+      }
+
+      .timeline {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 50px 20px;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .zones-layout,
+      .tracking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .zones-content {
+        max-width: 700px;
+      }
+
+      .notes-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns:
+          1.5fr 1fr 1fr;
+      }
+
+      .footer-column:last-child {
+        grid-column: 2 / 4;
+      }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 650
+    ===================================================== */
+
+    @media (max-width: 650px) {
+
+      .navbar {
+        height: 78px;
+      }
+
+      .brand-symbol {
+        width: 39px;
+        height: 39px;
+        font-size: 24px;
+      }
+
+      .brand-text strong {
+        font-size: 19px;
+      }
+
+      .brand-text small {
+        font-size: 7px;
+      }
+
+      .shipping-hero {
+        padding-top: 120px;
+      }
+
+      .hero-content h1 {
+        font-size:
+          clamp(55px, 15vw, 75px);
+
+        letter-spacing: -2px;
+      }
+
+      .art-circle {
+        width: 300px;
+        height: 300px;
+      }
+
+      .delivery-box {
+        width: 190px;
+        height: 140px;
+      }
+
+      .delivery-box::after {
+        left: 20px;
+        bottom: 20px;
+        font-size: 14px;
+      }
+
+      .hero-tag {
+        width: 90px;
+        height: 90px;
+      }
+
+      .section {
+        padding:
+          80px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 52px;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-step p {
+        max-width: 280px;
+      }
+
+      .tracking-box {
+        padding: 25px 20px;
+      }
+
+      .tracking-input {
+        flex-direction: column;
+      }
+
+      .track-btn {
+        width: 100%;
+        min-height: 50px;
+      }
+
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns:
+          1fr 1fr;
+
+        gap: 35px 20px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-column:last-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 430
+    ===================================================== */
+
+    @media (max-width: 430px) {
+
+      .brand-text {
+        display: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .primary-btn,
+      .outline-btn {
+        width: 100%;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-card {
+        border-right: none;
+        border-bottom:
+          1px solid var(--border);
+      }
+
+      .quick-card:last-child {
+        border-bottom: none;
+      }
+
+      .india-art {
+        min-height: 380px;
+      }
+
+      .india-art::before {
+        width: 290px;
+        height: 290px;
+      }
+
+      .map-symbol i {
+        font-size: 140px;
+      }
+
+      .floating-whatsapp {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      .floating-whatsapp span {
+        display: none;
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+        scroll-behavior: auto !important;
+
+      }
+
+      .reveal {
+
+        opacity: 1;
+
+        transform: none;
+
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       LOADER
+  ===================================================== -->
+
+  <div class="loader" id="loader">
+
+    <div class="loader-symbol">
+      द
+    </div>
+
+    <strong>
+      DESISTEPS
+    </strong>
+
+    <small>
+      Walk Your Tradition
+    </small>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header class="site-header" id="siteHeader">
+
+    <nav class="navbar">
+
+
+      <!-- BRAND -->
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-symbol">
+          द
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            DESISTEPS
+          </strong>
+
+          <small>
+            Walk Your Tradition
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <!-- NAVIGATION -->
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="collection.html">
+          Collections
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="our-story.html">
+          Our Story
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+
+      <div class="nav-actions">
+
+        <a href="collection.html" class="nav-shop">
+
+          Shop Now
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN
+  ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="shipping-hero">
+
+      <div class="hero-pattern"></div>
+
+
+      <div class="hero-content reveal">
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-circle"></i>
+
+          SHIPPING & DELIVERY
+
+        </span>
+
+
+        <h1>
+
+          From Our
+          <span>Steps To Yours.</span>
+
+        </h1>
+
+
+        <p>
+
+          Your DesiSteps pair deserves a journey
+          as thoughtful as its design. Here's
+          everything you need to know about
+          processing, delivery and tracking.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a href="#shipping-process" class="primary-btn">
+
+            How It Works
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+          </a>
+
+
+          <a href="#tracking" class="outline-btn">
+
+            Track Order
+
+            <i class="fa-solid fa-location-arrow"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- DELIVERY ART -->
+
+      <div class="delivery-art reveal">
+
+        <div class="art-circle"></div>
+
+
+        <div class="delivery-box">
+
+          <div class="box-tape"></div>
+
+        </div>
+
+
+        <div class="delivery-route">
+
+          <div class="route-dot"></div>
+
+        </div>
+
+
+        <div class="hero-tag">
+
+          <i class="fa-solid fa-truck-fast"></i>
+
+          <span>
+            MOVING<br>
+            YOUR WAY
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         QUICK INFO
+    ==================================================== -->
+
+    <section class="quick-info">
+
+      <div class="quick-grid">
+
+
+        <div class="quick-card reveal">
+
+          <div class="quick-icon">
+
+            <i class="fa-regular fa-clock"></i>
+
+          </div>
+
+          <h3>
+            1–2 Days
+          </h3>
+
+          <p>
+            Typical order processing
+          </p>
+
+        </div>
+
+
+        <div class="quick-card reveal">
+
+          <div class="quick-icon">
+
+            <i class="fa-solid fa-truck"></i>
+
+          </div>
+
+          <h3>
+            3–7 Days
+          </h3>
+
+          <p>
+            Typical domestic delivery window
+          </p>
+
+        </div>
+
+
+        <div class="quick-card reveal">
+
+          <div class="quick-icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+          </div>
+
+          <h3>
+            Trackable
+          </h3>
+
+          <p>
+            Follow your order's journey
+          </p>
+
+        </div>
+
+
+        <div class="quick-card reveal">
+
+          <div class="quick-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+          </div>
+
+          <h3>
+            Support
+          </h3>
+
+          <p>
+            We're here when you need us
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PROCESS
+    ==================================================== -->
+
+    <section class="section process-section" id="shipping-process">
+
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-circle"></i>
+
+          THE JOURNEY
+
+        </span>
+
+
+        <h2>
+
+          Four Steps.
+          <span>One Journey.</span>
+
+        </h2>
+
+
+        <p>
+
+          From the moment you place your order
+          to the moment your new pair reaches you.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="timeline">
+
+
+        <!-- STEP 01 -->
+
+        <div class="timeline-step reveal">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <h3>
+            Order
+          </h3>
+
+          <p>
+            Choose your favourite pair and
+            place your order with us.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 02 -->
+
+        <div class="timeline-step reveal">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h3>
+            Prepare
+          </h3>
+
+          <p>
+            Your order is carefully checked,
+            packed and prepared for dispatch.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 03 -->
+
+        <div class="timeline-step reveal">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3>
+            Dispatch
+          </h3>
+
+          <p>
+            Once shipped, you'll receive
+            tracking information for your order.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 04 -->
+
+        <div class="timeline-step reveal">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <h3>
+            Arrive
+          </h3>
+
+          <p>
+            Your DesiSteps pair arrives
+            ready for its next journey.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SHIPPING ZONES
+    ==================================================== -->
+
+    <section class="section zones-section">
+
+
+      <div class="zones-layout">
+
+
+        <div class="zones-content reveal">
+
+          <span class="eyebrow">
+
+            <i class="fa-solid fa-circle"></i>
+
+            DELIVERY ACROSS INDIA
+
+          </span>
+
+
+          <h2>
+
+            Wherever You
+            <span>Walk.</span>
+
+          </h2>
+
+
+          <p>
+
+            DesiSteps is built around the idea that
+            Indian style belongs everywhere. We aim
+            to make getting your favourite pair simple
+            and convenient.
+
+          </p>
+
+
+          <div class="zone-list">
+
+
+            <div class="zone-item">
+
+              <div class="zone-left">
+
+                <i class="fa-solid fa-city"></i>
+
+                <strong>
+                  Metro Cities
+                </strong>
+
+              </div>
+
+              <span>
+                3–5 days*
+              </span>
+
+            </div>
+
+
+            <div class="zone-item">
+
+              <div class="zone-left">
+
+                <i class="fa-solid fa-building"></i>
+
+                <strong>
+                  Tier 2 Cities
+                </strong>
+
+              </div>
+
+              <span>
+                4–6 days*
+              </span>
+
+            </div>
+
+
+            <div class="zone-item">
+
+              <div class="zone-left">
+
+                <i class="fa-solid fa-house"></i>
+
+                <strong>
+                  Other Serviceable Areas
+                </strong>
+
+              </div>
+
+              <span>
+                5–7 days*
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+          <p style="font-size:10px;margin-top:15px;">
+            *Delivery estimates are indicative and may
+            vary depending on location, courier availability
+            and other circumstances.
+          </p>
+
+        </div>
+
+
+
+        <!-- INDIA VISUAL -->
+
+        <div class="india-art reveal">
+
+          <div class="location-dot dot-one"></div>
+          <div class="location-dot dot-two"></div>
+          <div class="location-dot dot-three"></div>
+          <div class="location-dot dot-four"></div>
+
+
+          <div class="map-symbol">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <strong>
+              INDIA
+            </strong>
+
+            <span>
+              ROOTED IN INDIA
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         TRACKING
+    ==================================================== -->
+
+    <section class="section tracking-section" id="tracking">
+
+
+      <div class="tracking-layout">
+
+
+        <div class="tracking-content reveal">
+
+          <span class="eyebrow" style="color:var(--gold-light);">
+
+            <i class="fa-solid fa-circle"></i>
+
+            ORDER TRACKING
+
+          </span>
+
+
+          <h2>
+
+            Know Where
+            <span>You're Going.</span>
+
+          </h2>
+
+
+          <p>
+
+            Once your order is dispatched, use
+            the tracking information provided to
+            follow its journey.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="tracking-box reveal">
+
+          <label for="trackingNumber">
+
+            Enter Your Tracking Number
+
+          </label>
+
+
+          <div class="tracking-input">
+
+            <input type="text" id="trackingNumber" placeholder="e.g. DS123456789">
+
+
+            <button class="track-btn" id="trackBtn">
+
+              Track Order
+
+            </button>
+
+          </div>
+
+
+          <div class="tracking-result" id="trackingResult"></div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SHIPPING NOTES
+    ==================================================== -->
+
+    <section class="section notes-section">
+
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-circle"></i>
+
+          GOOD TO KNOW
+
+        </span>
+
+
+        <h2>
+
+          A Few Things
+          <span>To Remember.</span>
+
+        </h2>
+
+
+        <p>
+
+          Helpful information before your
+          DesiSteps journey begins.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="notes-grid">
+
+
+        <article class="note-card reveal">
+
+          <i class="fa-solid fa-box-open"></i>
+
+          <h3>
+            Processing
+          </h3>
+
+          <p>
+            Orders generally need time to be
+            processed and packed before dispatch.
+            Processing times may vary during sales,
+            holidays and peak periods.
+          </p>
+
+        </article>
+
+
+
+        <article class="note-card reveal">
+
+          <i class="fa-solid fa-calendar-days"></i>
+
+          <h3>
+            Delivery Days
+          </h3>
+
+          <p>
+            Delivery estimates are approximate.
+            Weather, public holidays, courier delays
+            and serviceability can affect arrival times.
+          </p>
+
+        </article>
+
+
+
+        <article class="note-card reveal">
+
+          <i class="fa-solid fa-location-crosshairs"></i>
+
+          <h3>
+            Address
+          </h3>
+
+          <p>
+            Please make sure your shipping address,
+            phone number and PIN code are correct
+            before completing your order.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FAQ
+    ==================================================== -->
+
+    <section class="section faq-section">
+
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-circle"></i>
+
+          SHIPPING FAQ
+
+        </span>
+
+
+        <h2>
+
+          Questions?
+          <span>We've Got You.</span>
+
+        </h2>
+
+
+        <p>
+
+          Here are some common shipping
+          questions from our community.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="faq-container">
+
+
+        <!-- FAQ 01 -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question" aria-expanded="false">
+
+            <span>
+              How long does shipping take?
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+
+          <div class="faq-answer">
+
+            <p>
+
+              Delivery times depend on your location
+              and courier service. As a general guide,
+              domestic orders may arrive within several
+              business days after dispatch. The actual
+              delivery estimate shown for your order
+              should be treated as the most relevant one.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FAQ 02 -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question" aria-expanded="false">
+
+            <span>
+              Will I receive tracking information?
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+
+          <div class="faq-answer">
+
+            <p>
+
+              When tracking is available for your order,
+              the tracking information can be shared after
+              your package has been dispatched.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FAQ 03 -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question" aria-expanded="false">
+
+            <span>
+              Can I change my delivery address?
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+
+          <div class="faq-answer">
+
+            <p>
+
+              Contact us as soon as possible if you notice
+              an address mistake. Address changes may not
+              be possible once an order has been dispatched.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FAQ 04 -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question" aria-expanded="false">
+
+            <span>
+              What if my package is delayed?
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+
+          <div class="faq-answer">
+
+            <p>
+
+              Delivery timelines can occasionally change
+              because of courier operations, weather,
+              holidays or other unforeseen circumstances.
+              If your package appears delayed, contact our
+              support team with your order details.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FAQ 05 -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question" aria-expanded="false">
+
+            <span>
+              Do you deliver to my PIN code?
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+
+          <div class="faq-answer">
+
+            <p>
+
+              Serviceability depends on the courier network
+              and destination PIN code. You can contact us
+              before ordering if you would like help checking
+              your delivery location.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CTA
+    ==================================================== -->
+
+    <section class="cta-section">
+
+
+      <div class="cta-box reveal">
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-circle"></i>
+
+          NEED HELP?
+
+        </span>
+
+
+        <h2>
+
+          Your Journey
+          <span>Starts Here.</span>
+
+        </h2>
+
+
+        <p>
+
+          Have a question about your delivery?
+          Our team is just a message away.
+
+        </p>
+
+
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="cta-btn">
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+          Chat With Us
+
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+
+    <div class="footer-top">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand footer-logo">
+
+          <span class="brand-symbol">
+            द
+          </span>
+
+          <span class="brand-text">
+
+            <strong>
+              DESISTEPS
+            </strong>
+
+            <small>
+              Walk Your Tradition
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <p>
+
+          Footwear rooted in Indian tradition,
+          shaped for modern journeys.
+
+        </p>
+
+
+        <div class="social-links">
+
+          <a href="#" aria-label="Instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+          </a>
+
+          <a href="#" aria-label="Facebook">
+
+            <i class="fa-brands fa-facebook-f"></i>
+
+          </a>
+
+          <a href="#" aria-label="Pinterest">
+
+            <i class="fa-brands fa-pinterest-p"></i>
+
+          </a>
+
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- SHOP -->
+
+      <div class="footer-column">
+
+        <h4>
+          SHOP
+        </h4>
+
+        <a href="collection.html">
+          Collections
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="collection.html#juttis">
+          Juttis
+        </a>
+
+        <a href="collection.html#kolhapuris">
+          Kolhapuris
+        </a>
+
+      </div>
+
+
+
+      <!-- DESISTEPS -->
+
+      <div class="footer-column">
+
+        <h4>
+          DESISTEPS
+        </h4>
+
+        <a href="our-story.html">
+          Our Story
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="shipping.html">
+          Shipping
+        </a>
+
+        <a href="returns.html">
+          Returns
+        </a>
+
+      </div>
+
+
+
+      <!-- CONTACT -->
+
+      <div class="footer-column">
+
+        <h4>
+          CONTACT
+        </h4>
+
+        <a href="mailto:hello@desisteps.in">
+          hello@desisteps.in
+        </a>
+
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener">
+
+          WhatsApp
+
+        </a>
+
+        <span>
+          India
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 DESISTEPS. All rights reserved.
+      </span>
+
+      <span>
+        ROOTED IN INDIA
+      </span>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ===================================================== -->
+
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="floating-whatsapp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <span>
+      Chat With Us
+    </span>
+
+  </a>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        /* ================================================
+           LOADER
+        ================================================= */
+
+        const loader =
+          document.getElementById("loader");
+
+        window.addEventListener(
+          "load",
+          () => {
+
+            setTimeout(() => {
+
+              loader?.classList.add("hide");
+
+            }, 600);
+
+          }
+        );
+
+
+
+        /* ================================================
+           NAVBAR SCROLL
+        ================================================= */
+
+        const header =
+          document.getElementById("siteHeader");
+
+
+        const updateHeader = () => {
+
+          if (!header) return;
+
+          if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+          } else {
+
+            header.classList.remove("scrolled");
+
+          }
+
+        };
+
+
+        window.addEventListener(
+          "scroll",
+          updateHeader,
+          { passive: true }
+        );
+
+
+        updateHeader();
+
+
+
+        /* ================================================
+           MOBILE MENU
+        ================================================= */
+
+        const menuToggle =
+          document.getElementById(
+            "menuToggle"
+          );
+
+        const navLinks =
+          document.getElementById(
+            "navLinks"
+          );
+
+
+        if (menuToggle && navLinks) {
+
+          menuToggle.addEventListener(
+            "click",
+            () => {
+
+              const open =
+                menuToggle.classList.toggle(
+                  "active"
+                );
+
+              navLinks.classList.toggle(
+                "active",
+                open
+              );
+
+              document.body.classList.toggle(
+                "menu-open",
+                open
+              );
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                String(open)
+              );
+
+            }
+          );
+
+
+          navLinks
+            .querySelectorAll("a")
+            .forEach(link => {
+
+              link.addEventListener(
+                "click",
+                () => {
+
+                  menuToggle.classList.remove(
+                    "active"
+                  );
+
+                  navLinks.classList.remove(
+                    "active"
+                  );
+
+                  document.body.classList.remove(
+                    "menu-open"
+                  );
+
+                  menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
+
+                }
+              );
+
+            });
+
+        }
+
+
+
+        /* ================================================
+           ESC CLOSE MENU
+        ================================================= */
+
+        document.addEventListener(
+          "keydown",
+          event => {
+
+            if (
+              event.key === "Escape" &&
+              menuToggle &&
+              navLinks
+            ) {
+
+              menuToggle.classList.remove(
+                "active"
+              );
+
+              navLinks.classList.remove(
+                "active"
+              );
+
+              document.body.classList.remove(
+                "menu-open"
+              );
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+
+        /* ================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+          document.querySelectorAll(
+            ".reveal"
+          );
+
+
+        if (
+          "IntersectionObserver"
+          in window
+        ) {
+
+          const observer =
+            new IntersectionObserver(
+              entries => {
+
+                entries.forEach(entry => {
+
+                  if (
+                    entry.isIntersecting
+                  ) {
+
+                    entry.target.classList.add(
+                      "visible"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+
+                  }
+
+                });
+
+              },
+              {
+                threshold: .12,
+                rootMargin:
+                  "0px 0px -40px 0px"
+              }
+            );
+
+
+          revealElements.forEach(element => {
+
+            observer.observe(element);
+
+          });
+
+        } else {
+
+          revealElements.forEach(element => {
+
+            element.classList.add(
+              "visible"
+            );
+
+          });
+
+        }
+
+
+
+        /* ================================================
+           FAQ
+        ================================================= */
+
+        const faqItems =
+          document.querySelectorAll(
+            ".faq-item"
+          );
+
+
+        faqItems.forEach(item => {
+
+          const question =
+            item.querySelector(
+              ".faq-question"
+            );
+
+          const answer =
+            item.querySelector(
+              ".faq-answer"
+            );
+
+
+          if (!question || !answer)
+            return;
+
+
+          question.addEventListener(
+            "click",
+            () => {
+
+              const isOpen =
+                item.classList.contains(
+                  "open"
+                );
+
+
+              faqItems.forEach(other => {
+
+                if (other !== item) {
+
+                  other.classList.remove(
+                    "open"
+                  );
+
+                  const otherQuestion =
+                    other.querySelector(
+                      ".faq-question"
+                    );
+
+                  const otherAnswer =
+                    other.querySelector(
+                      ".faq-answer"
+                    );
+
+
+                  otherQuestion?.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
+
+
+                  if (otherAnswer) {
+
+                    otherAnswer.style.maxHeight =
+                      null;
+
+                  }
+
+                }
+
+              });
+
+
+              if (!isOpen) {
+
+                item.classList.add(
+                  "open"
+                );
+
+                question.setAttribute(
+                  "aria-expanded",
+                  "true"
+                );
+
+                answer.style.maxHeight =
+                  answer.scrollHeight +
+                  "px";
+
+              } else {
+
+                item.classList.remove(
+                  "open"
+                );
+
+                question.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+                answer.style.maxHeight =
+                  null;
+
+              }
+
+            }
+          );
+
+        });
+
+
+
+        /* ================================================
+           TRACKING DEMO
+        ================================================= */
+
+        const trackingInput =
+          document.getElementById(
+            "trackingNumber"
+          );
+
+        const trackBtn =
+          document.getElementById(
+            "trackBtn"
+          );
+
+        const trackingResult =
+          document.getElementById(
+            "trackingResult"
+          );
+
+
+        if (
+          trackingInput &&
+          trackBtn &&
+          trackingResult
+        ) {
+
+          trackBtn.addEventListener(
+            "click",
+            () => {
+
+              const trackingNumber =
+                trackingInput.value.trim();
+
+
+              if (!trackingNumber) {
+
+                trackingResult.textContent =
+                  "Please enter your tracking number.";
+
+                trackingResult.style.color =
+                  "#7d1f25";
+
+                trackingInput.focus();
+
+                return;
+
+              }
+
+
+              trackingResult.style.color =
+                "#806e62";
+
+
+              trackingResult.innerHTML =
+                `
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                  Checking your tracking number...
+                `;
+
+
+              setTimeout(() => {
+
+                trackingResult.innerHTML =
+                  `
+                    <strong>
+                      Tracking number received.
+                    </strong>
+                    Please use the tracking link
+                    provided in your dispatch confirmation
+                    or contact DesiSteps support for the
+                    latest shipment status.
+                  `;
+
+              }, 1000);
+
+            }
+          );
+
+
+          trackingInput.addEventListener(
+            "keydown",
+            event => {
+
+              if (
+                event.key === "Enter"
+              ) {
+
+                trackBtn.click();
+
+              }
+
+            }
+          );
+
+        }
+
+
+
+        /* ================================================
+           SMOOTH ANCHORS
+        ================================================= */
+
+        document
+          .querySelectorAll(
+            'a[href^="#"]'
+          )
+          .forEach(anchor => {
+
+            anchor.addEventListener(
+              "click",
+              event => {
+
+                const id =
+                  anchor.getAttribute(
+                    "href"
+                  );
+
+
+                if (
+                  !id ||
+                  id === "#"
+                ) return;
+
+
+                const target =
+                  document.querySelector(id);
+
+
+                if (!target) return;
+
+
+                event.preventDefault();
+
+
+                const headerOffset =
+                  80;
+
+
+                const position =
+                  target.getBoundingClientRect()
+                    .top +
+                  window.scrollY -
+                  headerOffset;
+
+
+                window.scrollTo({
+
+                  top: position,
+
+                  behavior: "smooth"
+
+                });
+
+              }
+            );
+
+          });
+
+
+
+        /* ================================================
+           CURRENT YEAR
+        ================================================= */
+
+        const footerText =
+          document.querySelector(
+            ".footer-bottom span:first-child"
+          );
+
+
+        if (footerText) {
+
+          footerText.textContent =
+            `© ${new Date().getFullYear()} DESISTEPS. All rights reserved.`;
+
+        }
+
+
+
+        /* ================================================
+           PARALLAX DELIVERY BOX
+        ================================================= */
+
+        const deliveryArt =
+          document.querySelector(
+            ".delivery-art"
+          );
+
+
+        if (
+          deliveryArt &&
+          window.matchMedia(
+            "(pointer: fine)"
+          ).matches
+        ) {
+
+          window.addEventListener(
+            "mousemove",
+            event => {
+
+              const x =
+                (
+                  window.innerWidth / 2 -
+                  event.clientX
+                ) / 100;
+
+
+              const y =
+                (
+                  window.innerHeight / 2 -
+                  event.clientY
+                ) / 100;
+
+
+              deliveryArt.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+            },
+            { passive: true }
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>

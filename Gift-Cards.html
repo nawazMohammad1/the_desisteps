@@ -1,0 +1,3364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="DESISTEPS Gift Cards — Give the gift of Indian craftsmanship, tradition and timeless footwear.">
+
+  <title>Gift Cards | DESISTEPS — Walk Your Tradition</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       DESISTEPS
+       GIFT CARDS
+    ========================================================= */
+
+    :root {
+      --cream: #f7f0e5;
+      --cream-light: #fffaf3;
+      --cream-dark: #eadfce;
+
+      --brown: #321b12;
+      --brown-light: #573326;
+
+      --maroon: #7d1f25;
+      --maroon-dark: #541319;
+
+      --gold: #c99b55;
+      --gold-light: #e0bd7d;
+
+      --black: #16120f;
+      --white: #ffffff;
+
+      --text: #2d211b;
+      --muted: #806e62;
+
+      --border: rgba(50, 27, 18, 0.12);
+
+      --shadow-sm: 0 10px 30px rgba(50, 27, 18, 0.08);
+      --shadow-md: 0 20px 55px rgba(50, 27, 18, 0.12);
+      --shadow-lg: 0 30px 90px rgba(50, 27, 18, 0.18);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --transition: 0.35s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream-light);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--maroon);
+      color: var(--white);
+    }
+
+
+    /* =========================================================
+       PRELOADER
+    ========================================================= */
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--brown);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      text-align: center;
+      color: var(--cream-light);
+    }
+
+    .loader-mark {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border: 1px solid rgba(224, 189, 125, 0.4);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      animation: loaderSpin 2s linear infinite;
+    }
+
+    .loader-mark::before {
+      content: "";
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gold);
+      border-top-color: transparent;
+      border-radius: 50%;
+    }
+
+    .loader-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 5px;
+    }
+
+    .loader-text {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    @keyframes loaderSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 5%;
+      background: rgba(255, 250, 243, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border-bottom-color: var(--border);
+      box-shadow: 0 8px 30px rgba(50, 27, 18, 0.06);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--maroon);
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(224, 189, 125, 0.4);
+    }
+
+    .logo-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--brown);
+    }
+
+    .logo-tagline {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brown-light);
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--maroon);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--maroon);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--brown);
+      transition: var(--transition);
+    }
+
+    .nav-icon:hover {
+      background: var(--maroon);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: var(--white);
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 760px;
+      padding: 150px 5% 90px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(201, 155, 85, 0.12), transparent 28%),
+        radial-gradient(circle at 90% 70%, rgba(125, 31, 37, 0.08), transparent 30%),
+        var(--cream);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(125, 31, 37, 0.1);
+      border-radius: 50%;
+      right: -230px;
+      top: 60px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px dashed rgba(201, 155, 85, 0.35);
+      border-radius: 50%;
+      right: -140px;
+      top: 150px;
+    }
+
+    .hero-container {
+      max-width: 1400px;
+      margin: auto;
+      min-height: 550px;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--maroon);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(55px, 7vw, 100px);
+      line-height: 0.9;
+      color: var(--brown);
+      font-weight: 600;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 em {
+      color: var(--maroon);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 590px;
+      margin: 28px 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 52px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--maroon);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(125, 31, 37, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--maroon-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(125, 31, 37, 0.27);
+    }
+
+    .btn-outline {
+      color: var(--brown);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       GIFT CARD VISUAL
+    ========================================================= */
+
+    .gift-visual {
+      min-height: 480px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .gift-card-large {
+      width: min(100%, 520px);
+      aspect-ratio: 1.6 / 1;
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border-radius: 26px;
+      color: var(--cream-light);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(224, 189, 125, 0.28), transparent 25%),
+        radial-gradient(circle at 10% 90%, rgba(201, 155, 85, 0.12), transparent 30%),
+        linear-gradient(135deg, #3b1c14, #641b21 55%, #4a151b);
+      box-shadow: var(--shadow-lg);
+      transform: rotate(3deg);
+      transition: transform 0.5s ease;
+    }
+
+    .gift-card-large:hover {
+      transform: rotate(0deg) translateY(-8px);
+    }
+
+    .gift-card-large::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -100px;
+      bottom: -130px;
+      border: 1px solid rgba(224, 189, 125, 0.3);
+      border-radius: 50%;
+    }
+
+    .gift-card-large::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(224, 189, 125, 0.22);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .card-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .card-symbol {
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(224, 189, 125, 0.45);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+    }
+
+    .card-middle {
+      position: absolute;
+      left: 42px;
+      bottom: 88px;
+      z-index: 2;
+    }
+
+    .card-middle small {
+      display: block;
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .card-middle strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .card-bottom {
+      position: absolute;
+      left: 42px;
+      bottom: 30px;
+      z-index: 2;
+      color: rgba(255, 250, 243, 0.68);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .floating-tag {
+      position: absolute;
+      left: 0;
+      bottom: 10%;
+      padding: 15px 20px;
+      border-radius: 14px;
+      background: var(--cream-light);
+      box-shadow: var(--shadow-md);
+      color: var(--brown);
+      font-size: 12px;
+      font-weight: 700;
+      animation: floatTag 4s ease-in-out infinite;
+    }
+
+    .floating-tag i {
+      color: var(--maroon);
+      margin-right: 8px;
+    }
+
+    .floating-circle {
+      position: absolute;
+      right: 3%;
+      top: 8%;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--brown);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      line-height: 1;
+      transform: rotate(10deg);
+      animation: floatCircle 5s ease-in-out infinite;
+      box-shadow: 0 15px 30px rgba(50, 27, 18, 0.15);
+    }
+
+    @keyframes floatTag {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes floatCircle {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(10deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(4deg);
+      }
+    }
+
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    .section {
+      padding: 100px 5%;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 65px);
+      line-height: 1;
+      color: var(--brown);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       GIFT OPTIONS
+    ========================================================= */
+
+    .gift-options {
+      background: var(--cream);
+    }
+
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .amount-card {
+      position: relative;
+      min-height: 190px;
+      padding: 28px 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 250, 243, 0.65);
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .amount-card::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -50px;
+      top: -50px;
+      border: 1px solid rgba(201, 155, 85, 0.25);
+      border-radius: 50%;
+    }
+
+    .amount-card:hover,
+    .amount-card.selected {
+      transform: translateY(-7px);
+      background: var(--white);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+    }
+
+    .amount-card.selected {
+      outline: 2px solid rgba(125, 31, 37, 0.12);
+    }
+
+    .amount-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 14px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(125, 31, 37, 0.08);
+      color: var(--maroon);
+    }
+
+    .amount-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      color: var(--brown);
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .amount-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .custom-amount {
+      max-width: 620px;
+      margin: 35px auto 0;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .custom-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 9px;
+    }
+
+    .amount-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .rupee {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      color: var(--maroon);
+      font-weight: 700;
+    }
+
+    .amount-input-wrap input {
+      flex: 1;
+      height: 52px;
+      border: 0;
+      outline: 0;
+      padding: 0 15px;
+      color: var(--brown);
+      background: transparent;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       HOW IT WORKS
+    ========================================================= */
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 35px 30px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    .step-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 62px;
+      line-height: 0.8;
+      color: rgba(125, 31, 37, 0.12);
+      margin-bottom: 24px;
+    }
+
+    .step-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--cream);
+      color: var(--maroon);
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    .step-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--brown);
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       GIFT FORM + PREVIEW
+    ========================================================= */
+
+    .customize-section {
+      background:
+        linear-gradient(135deg,
+          var(--brown) 0%,
+          #44231a 50%,
+          var(--maroon-dark) 100%);
+      color: var(--cream-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .customize-section::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(224, 189, 125, 0.13);
+      border-radius: 50%;
+      right: -250px;
+      top: -200px;
+    }
+
+    .customize-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .customize-copy .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .customize-copy h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(44px, 5vw, 65px);
+      line-height: 0.95;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .customize-copy p {
+      color: rgba(255, 250, 243, 0.68);
+      max-width: 560px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .gift-form {
+      padding: 30px;
+      background: rgba(255, 250, 243, 0.97);
+      border-radius: 25px;
+      color: var(--text);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      color: var(--brown);
+      margin-bottom: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--brown);
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--white);
+      padding: 11px 14px;
+      outline: none;
+      color: var(--brown);
+      transition: 0.25s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 155, 85, 0.1);
+    }
+
+    textarea.form-control {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .delivery-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .delivery-option {
+      position: relative;
+    }
+
+    .delivery-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .delivery-option label {
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      background: var(--white);
+      transition: 0.25s ease;
+    }
+
+    .delivery-option label i {
+      color: var(--maroon);
+    }
+
+    .delivery-option input:checked+label {
+      border-color: var(--maroon);
+      background: rgba(125, 31, 37, 0.05);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       LIVE PREVIEW
+    ========================================================= */
+
+    .preview-wrap {
+      max-width: 1200px;
+      margin: 60px auto 0;
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .preview-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      color: var(--cream-light);
+      margin-bottom: 10px;
+    }
+
+    .preview-info p {
+      color: rgba(255, 250, 243, 0.65);
+      font-size: 14px;
+    }
+
+    .preview-card {
+      min-height: 280px;
+      border-radius: 24px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(224, 189, 125, 0.3), transparent 24%),
+        linear-gradient(135deg, #7d1f25, #48151a);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .preview-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -100px;
+      bottom: -100px;
+      border: 1px solid rgba(224, 189, 125, 0.3);
+      border-radius: 50%;
+    }
+
+    .preview-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .preview-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--cream-light);
+    }
+
+    .preview-amount {
+      position: relative;
+      z-index: 2;
+      margin-top: 45px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 60px;
+      line-height: 1;
+      color: var(--cream-light);
+    }
+
+    .preview-to {
+      position: relative;
+      z-index: 2;
+      margin-top: 8px;
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .preview-message {
+      position: relative;
+      z-index: 2;
+      margin-top: 22px;
+      color: rgba(255, 250, 243, 0.82);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-style: italic;
+      max-width: 80%;
+    }
+
+
+    /* =========================================================
+       BENEFITS
+    ========================================================= */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      padding: 28px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--cream);
+      transition: var(--transition);
+    }
+
+    .benefit:hover {
+      transform: translateY(-5px);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit i {
+      font-size: 22px;
+      color: var(--maroon);
+      margin-bottom: 15px;
+    }
+
+    .benefit h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--brown);
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: transparent;
+      color: var(--brown);
+      text-align: left;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .faq-question i {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--maroon);
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(45deg);
+      background: var(--maroon);
+      color: var(--white);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 50px 22px 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta-section {
+      padding: 110px 5%;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 50px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(224, 189, 125, 0.16), transparent 25%),
+        linear-gradient(135deg, var(--maroon-dark), var(--brown));
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-box::before,
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(224, 189, 125, 0.2);
+      border-radius: 50%;
+    }
+
+    .cta-box::before {
+      width: 350px;
+      height: 350px;
+      left: -180px;
+      top: -180px;
+    }
+
+    .cta-box::after {
+      width: 260px;
+      height: 260px;
+      right: -130px;
+      bottom: -130px;
+    }
+
+    .cta-box>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-box .eyebrow {
+      justify-content: center;
+      color: var(--gold-light);
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(43px, 6vw, 72px);
+      line-height: 0.95;
+      font-weight: 600;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 20px auto 28px;
+      color: rgba(255, 250, 243, 0.68);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      background: var(--brown);
+      color: var(--cream-light);
+      padding: 70px 5% 25px;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 250, 243, 0.1);
+    }
+
+    .footer-brand p {
+      max-width: 350px;
+      margin: 20px 0;
+      color: rgba(255, 250, 243, 0.6);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .footer-title {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 250, 243, 0.65);
+      font-size: 13px;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      transform: translateX(3px);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 250, 243, 0.13);
+      border-radius: 50%;
+      color: var(--cream-light);
+      transition: 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--maroon);
+      border-color: var(--maroon);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255, 250, 243, 0.45);
+      font-size: 11px;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--gold-light);
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: var(--white);
+      font-size: 25px;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.3);
+      transition: 0.3s ease;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1200px) {
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero-container {
+        gap: 45px;
+      }
+
+      .amount-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(330px, 85%);
+        height: 100vh;
+        padding: 100px 35px 40px;
+        background: var(--cream-light);
+        box-shadow: -20px 0 50px rgba(50, 27, 18, 0.15);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 14px;
+      }
+
+      .nav-actions .nav-icon {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .gift-visual {
+        min-height: 420px;
+      }
+
+      .customize-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .customize-copy {
+        text-align: center;
+      }
+
+      .customize-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .customize-copy .eyebrow {
+        justify-content: center;
+      }
+
+      .preview-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-info {
+        text-align: center;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .navbar {
+        padding: 14px 4%;
+      }
+
+      .logo-text {
+        font-size: 24px;
+      }
+
+      .logo-tagline {
+        display: none;
+      }
+
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 125px 5% 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 15vw, 70px);
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .gift-card-large {
+        padding: 30px;
+        transform: rotate(1deg);
+      }
+
+      .card-middle {
+        left: 30px;
+        bottom: 75px;
+      }
+
+      .card-bottom {
+        left: 30px;
+        bottom: 24px;
+      }
+
+      .floating-tag {
+        left: -5px;
+      }
+
+      .floating-circle {
+        right: -5px;
+        width: 70px;
+        height: 70px;
+        font-size: 13px;
+      }
+
+      .section {
+        padding: 75px 5%;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .amount-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .amount-card {
+        min-height: 155px;
+        padding: 22px 12px;
+      }
+
+      .amount-card h3 {
+        font-size: 28px;
+      }
+
+      .amount-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .form-row,
+      .delivery-options {
+        grid-template-columns: 1fr;
+      }
+
+      .gift-form {
+        padding: 22px;
+      }
+
+      .preview-card {
+        min-height: 245px;
+        padding: 25px;
+      }
+
+      .preview-amount {
+        margin-top: 30px;
+        font-size: 50px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .benefit {
+        padding: 22px 12px;
+      }
+
+      .cta-section {
+        padding: 75px 5%;
+      }
+
+      .cta-box {
+        padding: 55px 25px;
+      }
+
+      .footer {
+        padding: 55px 5% 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .whatsapp {
+        width: 52px;
+        height: 52px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .logo {
+        gap: 7px;
+      }
+
+      .logo-text {
+        font-size: 21px;
+      }
+
+      .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 21px;
+      }
+
+      .menu-toggle {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .gift-visual {
+        min-height: 320px;
+      }
+
+      .gift-card-large {
+        width: 100%;
+        padding: 22px;
+        border-radius: 19px;
+      }
+
+      .gift-card-large::after {
+        inset: 10px;
+        border-radius: 14px;
+      }
+
+      .card-brand {
+        font-size: 20px;
+      }
+
+      .card-symbol {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+
+      .card-middle {
+        left: 22px;
+        bottom: 65px;
+      }
+
+      .card-bottom {
+        left: 22px;
+        bottom: 20px;
+        font-size: 8px;
+      }
+
+      .amount-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps-grid {
+        gap: 14px;
+      }
+
+      .step-card {
+        padding: 27px 22px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-question {
+        font-size: 20px;
+      }
+
+      .faq-answer p {
+        padding-right: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       PRELOADER
+  ======================================================== -->
+
+  <div class="preloader" id="preloader">
+
+    <div class="loader-content">
+
+      <div class="loader-mark"></div>
+
+      <div class="loader-logo">
+        DESISTEPS
+      </div>
+
+      <div class="loader-text">
+        Walk Your Tradition
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       NAVBAR
+  ======================================================== -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+
+        <span class="logo-icon">द</span>
+
+        <span>
+          <span class="logo-text">DESISTEPS</span>
+          <span class="logo-tagline">Walk Your Tradition</span>
+        </span>
+
+      </a>
+
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="collection.html">
+          Collections
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="our-story.html">
+          Our Story
+        </a>
+
+        <a href="craftsmanship.html">
+          Craftsmanship
+        </a>
+
+        <a href="journal.html">
+          Journal
+        </a>
+
+        <a href="Gift-Cards.html" class="active">
+          Gift Cards
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <a href="collection.html" class="nav-icon" aria-label="Shop">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <div class="hero-content reveal">
+
+          <span class="eyebrow">
+            A Gift With A Story
+          </span>
+
+          <h1>
+            Give them
+            <em>something</em>
+            to walk into.
+          </h1>
+
+          <p class="hero-description">
+            A DESISTEPS gift card is more than a present.
+            It is an invitation to discover Indian craftsmanship,
+            timeless footwear and a style that feels truly their own.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#gift-options" class="btn btn-primary">
+              Choose a Gift Card
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+            <a href="#how-it-works" class="btn btn-outline">
+              How It Works
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="gift-visual reveal">
+
+          <div class="floating-circle">
+            MADE<br>
+            WITH<br>
+            LOVE
+          </div>
+
+          <div class="gift-card-large">
+
+            <div class="card-top">
+
+              <div class="card-brand">
+                DESISTEPS
+              </div>
+
+              <div class="card-symbol">
+                द
+              </div>
+
+            </div>
+
+            <div class="card-middle">
+
+              <small>
+                Gift Card
+              </small>
+
+              <strong>
+                ₹2,500
+              </strong>
+
+            </div>
+
+            <div class="card-bottom">
+              WALK YOUR TRADITION
+            </div>
+
+          </div>
+
+          <div class="floating-tag">
+            <i class="fa-solid fa-heart"></i>
+            A thoughtful gift, every time.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GIFT OPTIONS
+    ====================================================== -->
+
+    <section class="section gift-options" id="gift-options">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Pick Your Gesture
+          </span>
+
+          <h2>
+            A little something,
+            beautifully chosen.
+          </h2>
+
+          <p>
+            Choose an amount and let them discover their
+            favourite DESISTEPS pair.
+          </p>
+
+        </div>
+
+
+        <div class="amount-grid">
+
+          <div class="amount-card reveal" data-amount="1000">
+
+            <div class="amount-icon">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+
+            <h3>₹1,000</h3>
+
+            <p>
+              A thoughtful little surprise.
+            </p>
+
+          </div>
+
+
+          <div class="amount-card reveal" data-amount="2500">
+
+            <div class="amount-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <h3>₹2,500</h3>
+
+            <p>
+              A beautiful step into DESISTEPS.
+            </p>
+
+          </div>
+
+
+          <div class="amount-card reveal" data-amount="5000">
+
+            <div class="amount-icon">
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <h3>₹5,000</h3>
+
+            <p>
+              Give them room to choose.
+            </p>
+
+          </div>
+
+
+          <div class="amount-card reveal" data-amount="10000">
+
+            <div class="amount-icon">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>₹10,000</h3>
+
+            <p>
+              For an unforgettable gesture.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="custom-amount reveal">
+
+          <label class="custom-label" for="customAmount">
+            Or choose your own amount
+          </label>
+
+          <div class="amount-input-wrap">
+
+            <span class="rupee">
+              ₹
+            </span>
+
+            <input type="number" id="customAmount" min="500" max="50000" step="100" placeholder="Enter amount">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+    ====================================================== -->
+
+    <section class="section" id="how-it-works">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Simple & Thoughtful
+          </span>
+
+          <h2>
+            Three steps.
+            One beautiful gift.
+          </h2>
+
+          <p>
+            Sending a DESISTEPS gift card is simple,
+            personal and made for every celebration.
+          </p>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+          <article class="step-card reveal">
+
+            <div class="step-number">
+              01
+            </div>
+
+            <div class="step-icon">
+              <i class="fa-solid fa-hand-pointer"></i>
+            </div>
+
+            <h3>
+              Choose
+            </h3>
+
+            <p>
+              Select a gift-card amount that feels right
+              for your recipient.
+            </p>
+
+          </article>
+
+
+          <article class="step-card reveal">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <div class="step-icon">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+
+            <h3>
+              Personalise
+            </h3>
+
+            <p>
+              Add their name, your message and your
+              preferred delivery method.
+            </p>
+
+          </article>
+
+
+          <article class="step-card reveal">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <div class="step-icon">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+
+            <h3>
+              Gift
+            </h3>
+
+            <p>
+              They receive their gift card and choose
+              the DESISTEPS pair they love.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CUSTOMIZE
+    ====================================================== -->
+
+    <section class="section customize-section">
+
+      <div class="customize-grid">
+
+        <div class="customize-copy reveal">
+
+          <span class="eyebrow">
+            Make It Personal
+          </span>
+
+          <h2>
+            Put a little
+            <em>you</em>
+            into the gift.
+          </h2>
+
+          <p>
+            Tell us who the gift is for, add a heartfelt message
+            and choose how you'd like the gift to reach them.
+            Your recipient can then explore DESISTEPS and choose
+            a pair that feels like theirs.
+          </p>
+
+        </div>
+
+
+        <form class="gift-form reveal" id="giftForm">
+
+          <h3 class="form-title">
+            Gift Card Details
+          </h3>
+
+
+          <div class="form-group">
+
+            <label for="recipient">
+              RECIPIENT NAME
+            </label>
+
+            <input type="text" id="recipient" class="form-control" placeholder="Who is this gift for?" required>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="sender">
+                YOUR NAME
+              </label>
+
+              <input type="text" id="sender" class="form-control" placeholder="Your name">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="email">
+                RECIPIENT EMAIL
+              </label>
+
+              <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              GIFT MESSAGE
+            </label>
+
+            <textarea id="message" class="form-control" maxlength="120"
+              placeholder="Write a little something..."></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              DELIVERY METHOD
+            </label>
+
+            <div class="delivery-options">
+
+              <div class="delivery-option">
+
+                <input type="radio" name="delivery" id="emailDelivery" value="Email" checked>
+
+                <label for="emailDelivery">
+
+                  <i class="fa-solid fa-envelope"></i>
+
+                  Email Gift
+
+                </label>
+
+              </div>
+
+
+              <div class="delivery-option">
+
+                <input type="radio" name="delivery" id="whatsappDelivery" value="WhatsApp">
+
+                <label for="whatsappDelivery">
+
+                  <i class="fa-brands fa-whatsapp"></i>
+
+                  WhatsApp
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <button type="submit" class="btn btn-primary form-submit">
+            Continue With Gift Card
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p class="form-note">
+            Demo form — connect this to your payment/order system
+            before production.
+          </p>
+
+        </form>
+
+      </div>
+
+
+      <!-- LIVE PREVIEW -->
+
+      <div class="preview-wrap">
+
+        <div class="preview-info reveal">
+
+          <span class="eyebrow">
+            Live Preview
+          </span>
+
+          <h3>
+            See your gift come to life.
+          </h3>
+
+          <p>
+            Your recipient's name and message will appear
+            on the preview as you type.
+          </p>
+
+        </div>
+
+
+        <div class="preview-card reveal">
+
+          <div class="preview-card-top">
+
+            <div class="preview-logo">
+              DESISTEPS
+            </div>
+
+            <div class="card-symbol">
+              द
+            </div>
+
+          </div>
+
+          <div class="preview-amount" id="previewAmount">
+            ₹2,500
+          </div>
+
+          <div class="preview-to" id="previewTo">
+            A gift for someone special
+          </div>
+
+          <div class="preview-message" id="previewMessage">
+            "A little something for your next beautiful step."
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BENEFITS
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Why Gift DESISTEPS
+          </span>
+
+          <h2>
+            Thoughtful from
+            every angle.
+          </h2>
+
+        </div>
+
+
+        <div class="benefits-grid">
+
+          <div class="benefit reveal">
+
+            <i class="fa-solid fa-shoe-prints"></i>
+
+            <h3>
+              Choice
+            </h3>
+
+            <p>
+              Let them choose the style they love.
+            </p>
+
+          </div>
+
+
+          <div class="benefit reveal">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <h3>
+              Personal
+            </h3>
+
+            <p>
+              Add your own message to make it meaningful.
+            </p>
+
+          </div>
+
+
+          <div class="benefit reveal">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>
+              Easy
+            </h3>
+
+            <p>
+              A simple digital gifting experience.
+            </p>
+
+          </div>
+
+
+          <div class="benefit reveal">
+
+            <i class="fa-solid fa-earth-asia"></i>
+
+            <h3>
+              Desi
+            </h3>
+
+            <p>
+              Give the story of Indian craftsmanship.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="section" id="faq">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Gift Card Questions
+          </span>
+
+          <h2>
+            Before you gift.
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+              What can a DESISTEPS gift card be used for?
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Gift cards are intended to be used toward
+                eligible DESISTEPS products. The exact redemption
+                and payment rules should be configured according
+                to your store's final checkout system.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+              Can I choose a custom amount?
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. The page includes a custom amount field.
+                You can set the final minimum, maximum and
+                permitted denominations according to your
+                business requirements.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+              Can I add a personal message?
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. Add a short personal message during the
+                gifting process so your recipient knows who
+                the gift is from.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+              Can I send the gift card through WhatsApp?
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                The interface supports WhatsApp as a delivery
+                preference. Connect it to your WhatsApp/order
+                workflow before using it for live transactions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+              Can I return or exchange a gift card?
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Gift-card refund, cancellation and expiry rules
+                should follow your final DESISTEPS terms and
+                applicable requirements. Add your confirmed policy
+                here before publishing.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta-section">
+
+      <div class="cta-box reveal">
+
+        <span class="eyebrow">
+          Give A Little Desi Love
+        </span>
+
+        <h2>
+          Some gifts don't need
+          a reason.
+        </h2>
+
+        <p>
+          Celebrate birthdays, festivals, milestones,
+          new beginnings — or simply someone who deserves
+          a beautiful surprise.
+        </p>
+
+        <a href="#gift-options" class="btn btn-primary">
+          Choose Their Gift
+          <i class="fa-solid fa-gift"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+            DESISTEPS
+          </div>
+
+          <p>
+            Indian footwear, rooted in tradition and designed
+            for the way you walk today.
+          </p>
+
+          <div class="footer-social">
+
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="social-link" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Explore
+          </div>
+
+          <div class="footer-links">
+
+            <a href="collection.html">
+              Collections
+            </a>
+
+            <a href="new-arrivals.html">
+              New Arrivals
+            </a>
+
+            <a href="craftsmanship.html">
+              Craftsmanship
+            </a>
+
+            <a href="journal.html">
+              Journal
+            </a>
+
+            <a href="Gift-Cards.html">
+              Gift Cards
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Help
+          </div>
+
+          <div class="footer-links">
+
+            <a href="shipping.html">
+              Shipping
+            </a>
+
+            <a href="returns.html">
+              Returns
+            </a>
+
+            <a href="size-guide.html">
+              Size Guide
+            </a>
+
+            <a href="faq.html">
+              FAQ
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Legal
+          </div>
+
+          <div class="footer-links">
+
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+            <a href="our-story.html">
+              Our Story
+            </a>
+
+            <a href="craftsmanship.html">
+              Our Craft
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © <span id="year"></span> DESISTEPS. All rights reserved.
+        </span>
+
+        <div class="footer-bottom-links">
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP
+  ======================================================== -->
+
+  <a href="https://wa.me/919999999999?text=Hi%20DESISTEPS%2C%20I%20want%20to%20know%20about%20Gift%20Cards."
+    class="whatsapp" target="_blank" rel="noopener" aria-label="Chat with DESISTEPS on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* =====================================================
+       PRELOADER
+    ===================================================== */
+
+    window.addEventListener("load", () => {
+
+      const preloader =
+        document.getElementById("preloader");
+
+      setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+      }, 500);
+
+    });
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    const navbar =
+      document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 40) {
+
+        navbar.classList.add("scrolled");
+
+      } else {
+
+        navbar.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen =
+        navLinks.classList.toggle("open");
+
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+    document.querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          document.body.classList.remove("menu-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+      });
+
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        navLinks.classList.remove("open");
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.innerHTML =
+          '<i class="fa-solid fa-bars"></i>';
+
+      }
+
+    });
+
+
+    /* =====================================================
+       GIFT CARD AMOUNT
+    ===================================================== */
+
+    const amountCards =
+      document.querySelectorAll(".amount-card");
+
+    const customAmount =
+      document.getElementById("customAmount");
+
+    const previewAmount =
+      document.getElementById("previewAmount");
+
+    let selectedAmount = 2500;
+
+
+    function updateAmount(amount) {
+
+      if (!amount || Number(amount) <= 0) {
+        return;
+      }
+
+      selectedAmount = Number(amount);
+
+      previewAmount.textContent =
+        "₹" +
+        selectedAmount.toLocaleString("en-IN");
+
+    }
+
+
+    amountCards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        amountCards.forEach(item => {
+
+          item.classList.remove("selected");
+
+        });
+
+        card.classList.add("selected");
+
+        const amount =
+          card.dataset.amount;
+
+        customAmount.value = "";
+
+        updateAmount(amount);
+
+      });
+
+    });
+
+
+    customAmount.addEventListener("input", () => {
+
+      amountCards.forEach(card => {
+
+        card.classList.remove("selected");
+
+      });
+
+      const value =
+        Number(customAmount.value);
+
+      if (value >= 500) {
+
+        updateAmount(value);
+
+      }
+
+    });
+
+
+    /* Select default amount */
+
+    const defaultCard =
+      document.querySelector(
+        '.amount-card[data-amount="2500"]'
+      );
+
+    if (defaultCard) {
+
+      defaultCard.classList.add("selected");
+
+    }
+
+
+    /* =====================================================
+       LIVE PREVIEW
+    ===================================================== */
+
+    const recipientInput =
+      document.getElementById("recipient");
+
+    const messageInput =
+      document.getElementById("message");
+
+    const previewTo =
+      document.getElementById("previewTo");
+
+    const previewMessage =
+      document.getElementById("previewMessage");
+
+
+    recipientInput.addEventListener("input", () => {
+
+      const name =
+        recipientInput.value.trim();
+
+      previewTo.textContent =
+        name
+          ? "A gift for " + name
+          : "A gift for someone special";
+
+    });
+
+
+    messageInput.addEventListener("input", () => {
+
+      const message =
+        messageInput.value.trim();
+
+      previewMessage.textContent =
+        message
+          ? '"' + message + '"'
+          : '"A little something for your next beautiful step."';
+
+    });
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    const giftForm =
+      document.getElementById("giftForm");
+
+    giftForm.addEventListener("submit", (event) => {
+
+      event.preventDefault();
+
+      const recipient =
+        recipientInput.value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      if (!recipient || !email) {
+
+        alert(
+          "Please enter the recipient name and email."
+        );
+
+        return;
+
+      }
+
+      alert(
+        "Gift card details captured successfully for " +
+        recipient +
+        ". Connect this form to your checkout/payment system for live orders."
+      );
+
+    });
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ===================================================== */
+
+    const faqItems =
+      document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+
+      const question =
+        item.querySelector(".faq-question");
+
+      const answer =
+        item.querySelector(".faq-answer");
+
+      question.addEventListener("click", () => {
+
+        const isActive =
+          item.classList.contains("active");
+
+
+        faqItems.forEach(otherItem => {
+
+          otherItem.classList.remove("active");
+
+          const otherAnswer =
+            otherItem.querySelector(".faq-answer");
+
+          otherAnswer.style.maxHeight = null;
+
+        });
+
+
+        if (!isActive) {
+
+          item.classList.add("active");
+
+          answer.style.maxHeight =
+            answer.scrollHeight + "px";
+
+        }
+
+      });
+
+    });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    /* =====================================================
+       SMOOTH ANCHOR LINKS
+    ===================================================== */
+
+    document.querySelectorAll(
+      'a[href^="#"]'
+    ).forEach(anchor => {
+
+      anchor.addEventListener("click", event => {
+
+        const targetId =
+          anchor.getAttribute("href");
+
+        if (
+          targetId &&
+          targetId !== "#"
+        ) {
+
+          const target =
+            document.querySelector(targetId);
+
+          if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+
+        }
+
+      });
+
+    });
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* =====================================================
+       PARALLAX GIFT CARD
+    ===================================================== */
+
+    const giftCard =
+      document.querySelector(".gift-card-large");
+
+    if (
+      giftCard &&
+      window.matchMedia(
+        "(prefers-reduced-motion: no-preference)"
+      ).matches
+    ) {
+
+      document.addEventListener(
+        "mousemove",
+        event => {
+
+          const x =
+            (event.clientX /
+              window.innerWidth -
+              0.5) * 8;
+
+          const y =
+            (event.clientY /
+              window.innerHeight -
+              0.5) * 8;
+
+          giftCard.style.transform =
+            `rotate(${3 + x * 0.15}deg) translate(${x}px, ${y}px)`;
+
+        }
+      );
+
+    }
+
+  </script>
+
+</body>
+
+</html>

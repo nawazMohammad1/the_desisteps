@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#321b12">
+
+  <meta name="description"
+    content="Explore the DesiSteps collection — juttis, kolhapuris, mojaris, sneakers and everyday footwear inspired by India.">
+
+  <meta name="keywords"
+    content="DesiSteps, Indian footwear, juttis, kolhapuris, mojaris, sneakers, traditional footwear">
+
+  <meta name="author" content="DESISTEPS">
+
+  <title>Collections | DESISTEPS</title>
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- =====================================================
+       COLLECTION CSS
+  ====================================================== -->
+
+  <link rel="stylesheet" href="css/collection.css">
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       PRELOADER
+  ====================================================== -->
+
+  <div class="preloader" aria-hidden="true">
+    <div class="loader-symbol">द</div>
+
+    <span>DESISTEPS</span>
+
+    <small>WALK YOUR TRADITION</small>
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+      <!-- BRAND -->
+
+      <a href="index.html" class="brand" aria-label="DESISTEPS Home">
+
+        <span class="brand-symbol">द</span>
+
+        <span class="brand-text">
+
+          <strong>
+            DESI<span>STEPS</span>
+          </strong>
+
+          <small>
+            WALK YOUR TRADITION
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <!-- DESKTOP NAVIGATION -->
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="collection.html" class="active" aria-current="page">
+          Collections
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="about.html">
+          Our Story
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <!-- NAV ACTIONS -->
+
+      <div class="nav-actions">
+
+        <!-- SEARCH -->
+
+        <button class="nav-icon search-trigger" type="button" aria-label="Open search" aria-controls="searchOverlay"
+          aria-expanded="false">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+
+        <!-- WISHLIST -->
+
+        <button class="nav-icon wishlist-trigger" type="button" aria-label="Wishlist">
+
+          <i class="fa-regular fa-heart"></i>
+
+          <span class="nav-count wishlist-count" aria-label="0 wishlist items">
+            0
+          </span>
+
+        </button>
+
+
+        <!-- SHOPPING BAG -->
+
+        <button class="nav-icon bag-trigger" type="button" aria-label="Shopping bag">
+
+          <i class="fa-solid fa-bag-shopping"></i>
+
+          <span class="nav-count bag-count" aria-label="0 items in bag">
+            0
+          </span>
+
+        </button>
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-controls="mobileMenu"
+          aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MOBILE NAVIGATION
+    ================================================== -->
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="collection.html" class="active" aria-current="page">
+        Collections
+      </a>
+
+      <a href="new-arrivals.html">
+        New Arrivals
+      </a>
+
+      <a href="about.html">
+        Our Story
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       SEARCH OVERLAY
+  ====================================================== -->
+
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+
+    <button class="close-search" type="button" aria-label="Close search">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="search-box">
+
+      <span>
+        SEARCH DESISTEPS
+      </span>
+
+
+      <div class="search-input-wrap">
+
+        <input type="search" id="searchInput" placeholder="Search sneakers, juttis, kolhapuris..." autocomplete="off"
+          aria-label="Search DESISTEPS products">
+
+        <button type="button" id="searchButton" aria-label="Submit search">
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+      </div>
+
+
+      <p>
+        Try searching for
+        <strong>Juttis</strong>,
+        <strong>Sneakers</strong>
+        or
+        <strong>Kolhapuris</strong>
+      </p>
+
+
+      <div class="search-suggestions" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main>
+
+    <!-- ===================================================
+         COLLECTION HERO
+    ==================================================== -->
+
+    <section class="collection-hero">
+
+      <div class="hero-pattern" aria-hidden="true"></div>
+
+
+      <div class="hero-content reveal">
+
+        <span class="eyebrow">
+          DESISTEPS / COLLECTION 2026
+        </span>
+
+
+        <h1>
+          Made for
+          <span>Every Step.</span>
+        </h1>
+
+
+        <p>
+          From handcrafted traditions to everyday street style,
+          discover footwear that carries a little piece of India
+          wherever you go.
+        </p>
+
+
+        <div class="hero-line" aria-hidden="true"></div>
+
+      </div>
+
+
+      <div class="hero-decoration" aria-hidden="true">
+
+        <span>ROOTED</span>
+        <span>IN</span>
+        <span>INDIA</span>
+
+      </div>
+
+
+      <div class="scroll-indicator">
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
+
+        <i class="fa-solid fa-arrow-down"></i>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         COLLECTION INTRO
+    ==================================================== -->
+
+    <section class="collection-intro">
+
+      <div class="section-number" aria-hidden="true">
+        01
+      </div>
+
+
+      <div class="intro-content reveal">
+
+        <span class="section-label">
+          THE DESISTEPS EDIT
+        </span>
+
+
+        <h2>
+          Tradition
+          <em>meets</em>
+          everyday style.
+        </h2>
+
+
+        <p>
+          Explore our curated collection of footwear inspired by
+          India's colours, crafts and culture — redesigned for
+          the way you move today.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         COLLECTION / PRODUCTS
+    ==================================================== -->
+
+    <section class="collection-section" id="collection">
+
+      <!-- SECTION HEADING -->
+
+      <div class="section-heading reveal">
+
+        <div>
+
+          <span class="section-label">
+            SHOP BY STYLE
+          </span>
+
+          <h2>
+            Find Your
+            <span>Desi Step</span>
+          </h2>
+
+        </div>
+
+
+        <p>
+          Crafted for culture.
+          Designed for now.
+        </p>
+
+      </div>
+
+
+      <!-- FILTER -->
+
+      <div class="filter-wrapper reveal">
+
+        <div class="filter-buttons" role="group" aria-label="Filter collection">
+
+          <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">
+            All
+          </button>
+
+          <button class="filter-btn" data-filter="juttis" type="button" aria-pressed="false">
+            Juttis
+          </button>
+
+          <button class="filter-btn" data-filter="kolhapuris" type="button" aria-pressed="false">
+            Kolhapuris
+          </button>
+
+          <button class="filter-btn" data-filter="mojaris" type="button" aria-pressed="false">
+            Mojaris
+          </button>
+
+          <button class="filter-btn" data-filter="sneakers" type="button" aria-pressed="false">
+            Sneakers
+          </button>
+
+          <button class="filter-btn" data-filter="everyday" type="button" aria-pressed="false">
+            Everyday
+          </button>
+
+        </div>
+
+
+        <div class="result-count">
+          <span id="productCount">8</span>
+          STYLES
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           PRODUCT GRID
+      ================================================== -->
+
+      <div class="product-grid">
+
+
+        <!-- =================================================
+             PRODUCT 01
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="juttis" data-name="Royal Rani Jutti">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              BESTSELLER
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Royal Rani Jutti to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img src="https://images.pexels.com/photos/292999/pexels-photo-292999.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Traditional Indian inspired footwear" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Royal Rani Jutti">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Juttis
+            </span>
+
+            <h3>
+              Royal Rani Jutti
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,299
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 02
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="kolhapuris" data-name="Heritage Kolhapuri">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              HANDCRAFTED
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Heritage Kolhapuri to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img src="https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=900"
+              alt="Brown leather traditional sandals" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Heritage Kolhapuri">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Kolhapuris
+            </span>
+
+            <h3>
+              Heritage Kolhapuri
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,099
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 03
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="mojaris" data-name="Rajwadi Mojari">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              NEW
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Rajwadi Mojari to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img
+              src="https://images.pexels.com/photos/3261069/pexels-photo-3261069.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Traditional style brown footwear" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Rajwadi Mojari">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Mojaris
+            </span>
+
+            <h3>
+              Rajwadi Mojari
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,399
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 04
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="sneakers" data-name="Urban Desi Sneakers">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              NEW
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Urban Desi Sneakers to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img
+              src="https://images.pexels.com/photos/30245016/pexels-photo-30245016.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Brown and white urban sneakers" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Urban Desi Sneakers">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>
+              Urban Desi Sneakers
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,499
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 05
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="sneakers" data-name="Campus Runner">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Campus Runner to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img
+              src="https://images.pexels.com/photos/7926150/pexels-photo-7926150.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Brown and white casual sneakers" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Campus Runner Sneakers">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>
+              Campus Runner
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,599
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 06
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="everyday" data-name="Daily Desi Slides">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              EVERYDAY
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Daily Desi Slides to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img
+              src="https://images.pexels.com/photos/3782786/pexels-photo-3782786.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Minimal everyday sandals" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Daily Desi Slides">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Everyday
+            </span>
+
+            <h3>
+              Daily Desi Slides
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹799
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 07
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="juttis" data-name="Gulabo Jutti">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              LIMITED
+            </span>
+
+
+            <button class="wishlist-product" type="button" aria-label="Add Gulabo Jutti to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img src="https://images.pexels.com/photos/267320/pexels-photo-267320.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Fashion footwear collection" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Gulabo Jutti">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Juttis
+            </span>
+
+            <h3>
+              Gulabo Jutti
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,249
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PRODUCT 08
+        ================================================== -->
+
+        <article class="product-card reveal" data-category="kolhapuris" data-name="Desi Classic">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Desi Classic to wishlist"
+              aria-pressed="false">
+
+              <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <img
+              src="https://images.pexels.com/photos/1240892/pexels-photo-1240892.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Classic leather footwear" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+
+            <button class="quick-add" type="button" data-product="Desi Classic Kolhapuri">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Kolhapuris
+            </span>
+
+            <h3>
+              Desi Classic
+            </h3>
+
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹999
+              </strong>
+
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- =================================================
+           EMPTY SEARCH/FILTER STATE
+      ================================================== -->
+
+      <div class="empty-state" id="emptyState" aria-live="polite">
+
+        <div class="empty-icon">
+          <i class="fa-solid fa-shoe-prints"></i>
+        </div>
+
+        <h3>
+          No steps found.
+        </h3>
+
+        <p>
+          Try another search or explore a different collection.
+        </p>
+
+        <button type="button" class="reset-filter">
+          VIEW ALL COLLECTIONS
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         HERITAGE BANNER
+    ==================================================== -->
+
+    <section class="heritage-banner">
+
+      <div class="heritage-image">
+
+        <img src="https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Traditional footwear inspiration" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+
+      </div>
+
+
+      <div class="heritage-overlay" aria-hidden="true"></div>
+
+
+      <div class="heritage-content reveal">
+
+        <span class="section-label">
+          THE DESISTEPS PHILOSOPHY
+        </span>
+
+
+        <h2>
+          Old soul.
+          <br>
+          <em>New rhythm.</em>
+        </h2>
+
+
+        <p>
+          We believe tradition should never feel stuck in the past.
+          Every DesiSteps pair brings Indian character into
+          contemporary everyday life.
+        </p>
+
+
+        <a href="about.html" class="outline-btn">
+          OUR STORY
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         STYLE GUIDE
+    ==================================================== -->
+
+    <section class="style-guide">
+
+      <div class="style-heading reveal">
+
+        <span class="section-label">
+          FIND YOUR FIT
+        </span>
+
+
+        <h2>
+          One collection.
+          <span>Many moods.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="style-grid">
+
+
+        <!-- EVERYDAY -->
+
+        <div class="style-card reveal">
+
+          <span>01</span>
+
+          <i class="fa-solid fa-person-walking"></i>
+
+          <h3>
+            Everyday
+          </h3>
+
+          <p>
+            Easy silhouettes made for
+            everyday movement.
+          </p>
+
+          <a href="#collection">
+            SHOP
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+        <!-- FESTIVE -->
+
+        <div class="style-card featured reveal">
+
+          <span>02</span>
+
+          <i class="fa-solid fa-sun"></i>
+
+          <h3>
+            Festive
+          </h3>
+
+          <p>
+            Statement footwear for
+            celebrations and occasions.
+          </p>
+
+          <a href="#collection">
+            SHOP
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+        <!-- STREET -->
+
+        <div class="style-card reveal">
+
+          <span>03</span>
+
+          <i class="fa-solid fa-bolt"></i>
+
+          <h3>
+            Street
+          </h3>
+
+          <p>
+            Modern sneakers inspired
+            by India's streets.
+          </p>
+
+          <a href="#collection">
+            SHOP
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section class="newsletter">
+
+      <div class="newsletter-pattern" aria-hidden="true"></div>
+
+
+      <div class="newsletter-content reveal">
+
+        <span class="section-label">
+          STAY IN THE LOOP
+        </span>
+
+
+        <h2>
+          Step into
+          <span>something new.</span>
+        </h2>
+
+
+        <p>
+          Get first access to new drops, limited collections
+          and stories from the world of DesiSteps.
+        </p>
+
+
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+
+          <label for="newsletterEmail" class="sr-only">
+            Your email address
+          </label>
+
+          <input type="email" id="newsletterEmail" name="email" placeholder="Your email address" autocomplete="email"
+            required>
+
+
+          <button type="submit">
+            JOIN US
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </form>
+
+
+        <small>
+          No spam. Just good shoes and better stories.
+        </small>
+
+
+        <div class="newsletter-status" id="newsletterStatus" aria-live="polite"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-main">
+
+
+      <!-- FOOTER BRAND -->
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand" aria-label="DESISTEPS Home">
+
+          <span class="brand-symbol">
+            द
+          </span>
+
+          <span class="brand-text">
+
+            <strong>
+              DESI<span>STEPS</span>
+            </strong>
+
+            <small>
+              WALK YOUR TRADITION
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <p>
+          Indian roots.
+          Modern steps.
+          Made for your journey.
+        </p>
+
+
+        <div class="social-links">
+
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SHOP -->
+
+      <div class="footer-column">
+
+        <h4>
+          SHOP
+        </h4>
+
+        <a href="#collection">
+          All Collection
+        </a>
+
+        <a href="#collection">
+          Juttis
+        </a>
+
+        <a href="#collection">
+          Kolhapuris
+        </a>
+
+        <a href="#collection">
+          Mojaris
+        </a>
+
+        <a href="#collection">
+          Sneakers
+        </a>
+
+      </div>
+
+
+      <!-- DESISTEPS -->
+
+      <div class="footer-column">
+
+        <h4>
+          DESISTEPS
+        </h4>
+
+        <a href="about.html">
+          Our Story
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="journal.html">
+          Journal
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <!-- HELP -->
+
+      <div class="footer-column">
+
+        <h4>
+          HELP
+        </h4>
+
+        <a href="shipping.html">
+          Shipping
+        </a>
+
+        <a href="returns.html">
+          Returns
+        </a>
+
+        <a href="size-guide.html">
+          Size Guide
+        </a>
+
+        <a href="faq.html">
+          FAQs
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <span data-year>
+        © 2026 DESISTEPS. ALL RIGHTS RESERVED.
+      </span>
+
+      <span>
+        MADE WITH
+        <i class="fa-solid fa-heart"></i>
+        IN INDIA
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       CART TOAST
+  ====================================================== -->
+
+  <div class="cart-toast" role="status" aria-live="polite" aria-atomic="true">
+
+    <div class="toast-icon">
+
+      <i class="fa-solid fa-check"></i>
+
+    </div>
+
+
+    <div>
+
+      <strong>
+        Added to your bag
+      </strong>
+
+      <span class="toast-product">
+        Product
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="js/collection.js"></script>
+
+</body>
+
+</html>

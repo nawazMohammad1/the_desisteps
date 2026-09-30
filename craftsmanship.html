@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="DESISTEPS Craftsmanship — discover the details, materials and thoughtful process behind every pair.">
+  <title>Craftsmanship | DESISTEPS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --cream: #f7f0e5;
+      --cream-light: #fffaf3;
+      --cream-dark: #eadfce;
+      --brown: #321b12;
+      --brown-light: #573326;
+      --maroon: #7d1f25;
+      --maroon-dark: #541319;
+      --gold: #c99b55;
+      --gold-light: #e0bd7d;
+      --black: #16120f;
+      --white: #fff;
+      --text: #2d211b;
+      --muted: #806e62;
+      --border: rgba(50, 27, 18, .12);
+      --shadow: 0 25px 70px rgba(50, 27, 18, .11);
+      --shadow-small: 0 12px 35px rgba(50, 27, 18, .08);
+      --ease: cubic-bezier(.2, .75, .25, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* =========================
+       PRELOADER
+    ========================= */
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: var(--brown);
+      transition: opacity .65s ease, visibility .65s ease;
+    }
+
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader {
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .loader-mark {
+      width: 72px;
+      height: 72px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font: 700 2rem/1 "Cormorant Garamond", serif;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+
+    .loader p {
+      margin-top: 14px;
+      font-size: .62rem;
+      letter-spacing: 4px;
+    }
+
+    @keyframes loaderPulse {
+      50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 38px rgba(201, 155, 85, .2);
+      }
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 5.5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247, 240, 229, .86);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition: .35s ease;
+    }
+
+    .navbar.scrolled {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      border-color: var(--border);
+      box-shadow: 0 8px 30px rgba(50, 27, 18, .07);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--maroon);
+      font: 700 1.45rem/1 "Cormorant Garamond", serif;
+      transition: .3s ease;
+    }
+
+    .brand:hover .brand-mark {
+      color: var(--cream);
+      background: var(--maroon);
+      transform: rotate(-8deg);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--brown);
+      font: 700 1.55rem/1 "Cormorant Garamond", serif;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .52rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--brown);
+      font-size: .77rem;
+      font-weight: 600;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: var(--maroon);
+      transition: .3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--maroon);
+    }
+
+    .nav-contact {
+      padding: 9px 16px;
+      border: 1px solid var(--maroon);
+      border-radius: 50px;
+      color: var(--maroon) !important;
+    }
+
+    .nav-contact::after {
+      display: none !important;
+    }
+
+    .nav-contact:hover {
+      color: #fff !important;
+      background: var(--maroon);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--brown);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      padding: 150px 6% 90px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(201, 155, 85, .2), transparent 28%),
+        radial-gradient(circle at 88% 75%, rgba(125, 31, 37, .13), transparent 32%),
+        var(--cream);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: .08;
+      background:
+        linear-gradient(30deg, transparent 48%, var(--brown) 49%, var(--brown) 51%, transparent 52%) 0 0/55px 55px,
+        linear-gradient(150deg, transparent 48%, var(--brown) 49%, var(--brown) 51%, transparent 52%) 0 0/55px 55px;
+      mask-image: linear-gradient(to bottom, #000, transparent 90%);
+    }
+
+    .hero-inner {
+      width: min(1200px, 100%);
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--maroon);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      margin-top: 18px;
+      color: var(--brown);
+      font: 600 clamp(4rem, 7.5vw, 7.2rem)/.84 "Cormorant Garamond", serif;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--maroon);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 610px;
+      margin-top: 27px;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 50px;
+      font-size: .72rem;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+
+    .btn-primary {
+      background: var(--maroon);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(125, 31, 37, .17);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--maroon-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(50, 27, 18, .2);
+      color: var(--brown);
+      background: rgba(255, 255, 255, .4);
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      background: #fff;
+    }
+
+    /* Hero craft illustration */
+
+    .craft-visual {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .craft-orbit {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(125, 31, 37, .17);
+      border-radius: 50%;
+      animation: orbitSpin 20s linear infinite;
+    }
+
+    .craft-orbit::before,
+    .craft-orbit::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(201, 155, 85, .12);
+    }
+
+    .craft-orbit::before {
+      top: 30px;
+      left: 85px;
+    }
+
+    .craft-orbit::after {
+      right: 45px;
+      bottom: 85px;
+    }
+
+    @keyframes orbitSpin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .craft-card {
+      position: relative;
+      width: min(370px, 80%);
+      aspect-ratio: 4/5;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, rgba(84, 19, 25, .97), rgba(50, 27, 18, .98));
+      box-shadow: 0 35px 75px rgba(50, 27, 18, .26);
+      transform: rotate(4deg);
+      overflow: hidden;
+      transition: .5s var(--ease);
+    }
+
+    .craft-card:hover {
+      transform: rotate(0) translateY(-8px);
+    }
+
+    .craft-card::before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border: 1px solid rgba(224, 189, 125, .32);
+      border-radius: 15px;
+    }
+
+    .craft-card::after {
+      content: "DESISTEPS • CRAFTED WITH INTENTION";
+      position: absolute;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      width: 100%;
+      color: rgba(224, 189, 125, .7);
+      text-align: center;
+      font-size: .51rem;
+      letter-spacing: 2.5px;
+    }
+
+    .shoe-art {
+      position: relative;
+      width: 215px;
+      height: 315px;
+      transform: rotate(-16deg);
+      filter: drop-shadow(12px 18px 10px rgba(0, 0, 0, .25));
+    }
+
+    .shoe-sole {
+      position: absolute;
+      left: 21px;
+      bottom: 16px;
+      width: 170px;
+      height: 235px;
+      border-radius: 58% 44% 25% 28% / 25% 24% 60% 68%;
+      background: linear-gradient(135deg, #9a6535, #c99b55 48%, #e0bd7d);
+      transform: rotate(13deg);
+    }
+
+    .shoe-upper {
+      position: absolute;
+      left: 37px;
+      top: 54px;
+      width: 143px;
+      height: 218px;
+      border-radius: 55% 43% 28% 32% / 27% 25% 65% 70%;
+      background: linear-gradient(145deg, #ead0a0, #c99b55 55%, #8f5d30);
+      transform: rotate(13deg);
+      box-shadow: inset -12px -18px 25px rgba(84, 19, 25, .16);
+    }
+
+    .shoe-opening {
+      position: absolute;
+      top: 40px;
+      left: 47px;
+      width: 102px;
+      height: 60px;
+      border-radius: 50%;
+      background: #4c261a;
+      transform: rotate(13deg);
+      box-shadow: inset 0 0 0 8px rgba(224, 189, 125, .25);
+    }
+
+    .shoe-strap {
+      position: absolute;
+      left: 65px;
+      top: 88px;
+      width: 112px;
+      height: 28px;
+      border-radius: 50px;
+      border: 3px solid rgba(84, 19, 25, .5);
+      transform: rotate(13deg);
+    }
+
+    .shoe-ornament {
+      position: absolute;
+      left: 91px;
+      top: 100px;
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      color: var(--maroon);
+      background: var(--gold-light);
+      font-size: .7rem;
+      transform: rotate(13deg);
+    }
+
+    .floating-tag {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border: 1px solid rgba(224, 189, 125, .35);
+      border-radius: 50px;
+      background: rgba(50, 27, 18, .75);
+      color: var(--gold-light);
+      backdrop-filter: blur(8px);
+      font-size: .58rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      animation: tagFloat 4s ease-in-out infinite;
+    }
+
+    .tag-one {
+      left: 0;
+      top: 18%;
+    }
+
+    .tag-two {
+      right: -15px;
+      bottom: 18%;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes tagFloat {
+      50% {
+        transform: translateY(-9px)
+      }
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    section {
+      padding: 100px 6%;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    .mini {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--maroon);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--brown);
+      font: 600 clamp(2.7rem, 5vw, 4.3rem)/.95 "Cormorant Garamond", serif;
+    }
+
+    .section-heading p {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .intro {
+      background: #fff;
+    }
+
+    .intro-grid {
+      width: min(1100px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .intro-art {
+      position: relative;
+      min-height: 400px;
+      display: grid;
+      place-items: center;
+    }
+
+    .intro-frame {
+      width: min(330px, 85%);
+      height: 370px;
+      padding: 20px;
+      border: 1px solid var(--gold);
+      transform: rotate(-4deg);
+    }
+
+    .intro-frame-inner {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(224, 189, 125, .3), transparent 25%),
+        linear-gradient(145deg, var(--cream-dark), var(--cream));
+      overflow: hidden;
+      position: relative;
+    }
+
+    .thread {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px dashed rgba(125, 31, 37, .3);
+      border-radius: 50%;
+      animation: threadSpin 15s linear infinite;
+    }
+
+    .thread.two {
+      width: 210px;
+      height: 210px;
+      animation-direction: reverse;
+    }
+
+    @keyframes threadSpin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .intro-stamp {
+      position: relative;
+      z-index: 2;
+      width: 130px;
+      height: 130px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--maroon);
+      border-radius: 50%;
+      color: var(--maroon);
+      text-align: center;
+      font: 700 1.15rem/1.1 "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      transform: rotate(-12deg);
+    }
+
+    .intro-stamp small {
+      display: block;
+      margin-top: 5px;
+      font: 700 .45rem/1 "DM Sans", sans-serif;
+      letter-spacing: 2px;
+    }
+
+    .intro-copy h3 {
+      color: var(--brown);
+      font: 600 clamp(2.1rem, 4vw, 3.3rem)/1 "Cormorant Garamond", serif;
+    }
+
+    .intro-copy h3 span {
+      color: var(--maroon);
+      font-style: italic;
+    }
+
+    .intro-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .intro-copy p+p {
+      margin-top: 12px;
+    }
+
+    .quote {
+      margin-top: 25px;
+      padding-left: 18px;
+      border-left: 2px solid var(--gold);
+      color: var(--brown);
+      font: 600 1.2rem/1.35 "Cormorant Garamond", serif;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process {
+      background: var(--cream);
+    }
+
+    .process-grid {
+      width: min(1150px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .process-card {
+      position: relative;
+      min-height: 300px;
+      padding: 28px 23px;
+      border: 1px solid var(--border);
+      background: var(--cream-light);
+      overflow: hidden;
+      transition: .4s var(--ease);
+    }
+
+    .process-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(201, 155, 85, .5);
+      box-shadow: var(--shadow-small);
+    }
+
+    .process-number {
+      position: absolute;
+      top: 12px;
+      right: 17px;
+      color: rgba(125, 31, 37, .08);
+      font: 700 5rem/.8 "Cormorant Garamond", serif;
+    }
+
+    .process-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--maroon);
+      color: var(--gold-light);
+      font-size: 1rem;
+      transition: .35s ease;
+    }
+
+    .process-card:hover .process-icon {
+      transform: rotateY(180deg);
+    }
+
+    .process-card h3 {
+      margin-top: 25px;
+      color: var(--brown);
+      font: 600 1.65rem/1 "Cormorant Garamond", serif;
+    }
+
+    .process-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    /* =========================
+       MATERIALS
+    ========================= */
+
+    .materials {
+      background: #fff;
+    }
+
+    .materials-grid {
+      width: min(1150px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .material-card {
+      position: relative;
+      min-height: 360px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      background: var(--brown);
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .material-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(224, 189, 125, .24), transparent 25%),
+        linear-gradient(145deg, #573326, #321b12);
+    }
+
+    .material-card::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -70px;
+      border: 1px solid rgba(224, 189, 125, .22);
+      border-radius: 50%;
+      z-index: -1;
+      transition: .6s ease;
+    }
+
+    .material-card:hover::after {
+      transform: scale(1.4) rotate(35deg);
+    }
+
+    .material-symbol {
+      position: absolute;
+      top: 27px;
+      left: 28px;
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(224, 189, 125, .4);
+      border-radius: 50%;
+      color: var(--gold-light);
+    }
+
+    .material-card h3 {
+      font: 600 2.2rem/1 "Cormorant Garamond", serif;
+    }
+
+    .material-card p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, .66);
+      font-size: .74rem;
+    }
+
+    /* =========================
+       DETAIL BAND
+    ========================= */
+
+    .detail-band {
+      padding: 0 6%;
+      background: var(--cream);
+    }
+
+    .detail-wrap {
+      width: min(1150px, 100%);
+      margin: auto;
+      padding: 70px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .detail-copy .mini {
+      margin-bottom: 10px;
+    }
+
+    .detail-copy h2 {
+      color: var(--brown);
+      font: 600 clamp(2.7rem, 5vw, 4rem)/.95 "Cormorant Garamond", serif;
+    }
+
+    .detail-copy h2 span {
+      color: var(--maroon);
+      font-style: italic;
+    }
+
+    .detail-copy p {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .detail-list {
+      margin-top: 23px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .detail-list li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+      font-size: .77rem;
+    }
+
+    .detail-list i {
+      flex: 0 0 auto;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(125, 31, 37, .08);
+      color: var(--maroon);
+      font-size: .62rem;
+    }
+
+    .detail-art {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: var(--brown);
+    }
+
+    .detail-art::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 1px solid rgba(224, 189, 125, .2);
+      border-radius: 50%;
+    }
+
+    .detail-art::after {
+      content: "CRAFT • DETAIL • CHARACTER";
+      position: absolute;
+      bottom: 24px;
+      color: rgba(224, 189, 125, .62);
+      font-size: .55rem;
+      letter-spacing: 3px;
+    }
+
+    .needle {
+      position: absolute;
+      width: 230px;
+      height: 3px;
+      background: var(--gold-light);
+      transform: rotate(-30deg);
+      box-shadow: 0 0 15px rgba(224, 189, 125, .18);
+    }
+
+    .thread-line {
+      position: absolute;
+      width: 280px;
+      height: 190px;
+      border-bottom: 1px dashed rgba(224, 189, 125, .55);
+      border-radius: 0 0 50% 50%;
+      transform: rotate(-15deg);
+    }
+
+    .detail-seal {
+      position: relative;
+      z-index: 2;
+      width: 145px;
+      height: 145px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-light);
+      text-align: center;
+      font: 600 1.35rem/1 "Cormorant Garamond", serif;
+    }
+
+    .detail-seal i {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.4rem;
+    }
+
+    /* =========================
+       VALUES
+    ========================= */
+
+    .values {
+      background: #fff;
+    }
+
+    .value-grid {
+      width: min(1050px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .value-card {
+      padding: 32px 25px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: .35s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-small);
+    }
+
+    .value-icon {
+      width: 62px;
+      height: 62px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201, 155, 85, .5);
+      border-radius: 50%;
+      color: var(--maroon);
+      background: var(--cream);
+    }
+
+    .value-card h3 {
+      margin-top: 18px;
+      color: var(--brown);
+      font: 600 1.55rem/1 "Cormorant Garamond", serif;
+    }
+
+    .value-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: .74rem;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      position: relative;
+      padding: 85px 6%;
+      background: var(--maroon);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta::before,
+    .cta::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(224, 189, 125, .2);
+      border-radius: 50%;
+    }
+
+    .cta::before {
+      width: 430px;
+      height: 430px;
+      left: -220px;
+      top: -290px;
+    }
+
+    .cta::after {
+      width: 480px;
+      height: 480px;
+      right: -250px;
+      bottom: -330px;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .cta .mini {
+      color: var(--gold-light);
+    }
+
+    .cta h2 {
+      margin-top: 8px;
+      font: 600 clamp(2.8rem, 5vw, 4.5rem)/.95 "Cormorant Garamond", serif;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 14px auto 25px;
+      color: rgba(255, 255, 255, .7);
+      font-size: .82rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 55px 6% 25px;
+      background: var(--brown);
+      color: #fff;
+    }
+
+    .footer-grid {
+      width: min(1200px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.35fr repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .footer-brand strong {
+      font: 700 2rem/1 "Cormorant Garamond", serif;
+    }
+
+    .footer-brand p {
+      max-width: 300px;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, .58);
+      font-size: .75rem;
+    }
+
+    footer h4 {
+      margin-bottom: 13px;
+      color: var(--gold-light);
+      font-size: .67rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer-link {
+      display: block;
+      margin: 7px 0;
+      color: rgba(255, 255, 255, .63);
+      font-size: .74rem;
+      transition: .2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .socials a {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 50%;
+      color: rgba(255, 255, 255, .7);
+      transition: .3s ease;
+    }
+
+    .socials a:hover {
+      background: var(--maroon);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      width: min(1200px, 100%);
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255, 255, 255, .42);
+      font-size: .66rem;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 21px;
+      bottom: 21px;
+      z-index: 900;
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      font-size: 1.35rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+      transition: .3s ease;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1050px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-inner {
+        gap: 35px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:850px) {
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        left: 18px;
+        right: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: rgba(255, 250, 243, .98);
+        box-shadow: var(--shadow);
+        transform: translateY(-15px);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease;
+      }
+
+      .nav-links.open {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        padding: 11px 13px;
+        border-radius: 8px;
+      }
+
+      .nav-links a:hover {
+        background: var(--cream);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 135px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 750px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .eyebrow {
+        justify-content: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .craft-visual {
+        min-height: 480px;
+      }
+
+      .intro-grid,
+      .detail-wrap {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .intro-art {
+        order: 2;
+      }
+
+      .materials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .navbar {
+        padding: 13px 5%;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .brand strong {
+        font-size: 1.35rem;
+      }
+
+      section {
+        padding: 72px 5%;
+      }
+
+      .hero {
+        padding: 125px 5% 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.4rem, 16vw, 5.5rem);
+      }
+
+      .hero-description {
+        font-size: .84rem;
+      }
+
+      .craft-visual {
+        min-height: 410px;
+      }
+
+      .craft-orbit {
+        width: 320px;
+        height: 320px;
+      }
+
+      .craft-card {
+        width: 275px;
+      }
+
+      .floating-tag {
+        font-size: .48rem;
+        padding: 8px 10px;
+      }
+
+      .tag-one {
+        left: 0;
+      }
+
+      .tag-two {
+        right: -2px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-card {
+        min-height: 250px;
+      }
+
+      .materials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .material-card {
+        min-height: 310px;
+      }
+
+      .detail-wrap {
+        padding: 55px 0;
+      }
+
+      .detail-art {
+        min-height: 320px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .whatsapp {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media(max-width:390px) {
+      .hero h1 {
+        font-size: 3.25rem;
+      }
+
+      .craft-card {
+        width: 245px;
+      }
+
+      .craft-orbit {
+        width: 290px;
+        height: 290px;
+      }
+
+      .shoe-art {
+        transform: scale(.85) rotate(-16deg);
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="loader">
+      <div class="loader-mark">द</div>
+      <p>DESISTEPS</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+
+    <a href="index.html" class="brand">
+      <div class="brand-mark">द</div>
+      <div>
+        <strong>DESISTEPS</strong>
+        <span>Walk Your Tradition</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collections</a>
+      <a href="new-arrivals.html">New Arrivals</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="craftsmanship.html" class="active">Craftsmanship</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="returns.html">Returns</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-pattern"></div>
+
+      <div class="hero-inner">
+
+        <div class="hero-copy reveal">
+
+          <span class="eyebrow">The Art Behind The Step</span>
+
+          <h1>
+            Made With
+            <span>Meaning.</span>
+          </h1>
+
+          <p class="hero-description">
+            Every DESISTEPS pair is a meeting point between Indian character
+            and contemporary comfort — shaped by attention to materials,
+            details, finishing and the way a shoe feels when you walk.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#process" class="btn btn-primary">
+              Explore The Process
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+            <a href="collection.html" class="btn btn-outline">
+              View Collections
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="craft-visual reveal">
+
+          <div class="craft-orbit"></div>
+
+          <div class="floating-tag tag-one">
+            <i class="fa-solid fa-hand-sparkles"></i>
+            Thoughtful Details
+          </div>
+
+          <div class="floating-tag tag-two">
+            <i class="fa-solid fa-leaf"></i>
+            Indian Character
+          </div>
+
+          <div class="craft-card">
+
+            <div class="shoe-art">
+
+              <div class="shoe-sole"></div>
+              <div class="shoe-upper"></div>
+              <div class="shoe-opening"></div>
+              <div class="shoe-strap"></div>
+
+              <div class="shoe-ornament">
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+
+      <div class="section-heading reveal">
+        <span class="mini">Our Approach</span>
+        <h2>Where heritage meets <em>intention.</em></h2>
+        <p>
+          Craftsmanship is more than how a product is made.
+          It is the attention given to every small decision along the way.
+        </p>
+      </div>
+
+      <div class="intro-grid">
+
+        <div class="intro-art reveal">
+
+          <div class="intro-frame">
+            <div class="intro-frame-inner">
+
+              <div class="thread"></div>
+              <div class="thread two"></div>
+
+              <div class="intro-stamp">
+                DESI
+                <div>
+                  <small>CRAFTED</small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="intro-copy reveal">
+
+          <h3>
+            Details that make a
+            <span>difference.</span>
+          </h3>
+
+          <p>
+            From the silhouette of a classic jutti to the character of a
+            Kolhapuri-inspired design, DESISTEPS celebrates forms that feel
+            unmistakably Indian while fitting naturally into modern wardrobes.
+          </p>
+
+          <p>
+            We focus on the visible and invisible details — proportion,
+            texture, finishing, structure and comfort — so the final pair
+            feels considered from first look to every step.
+          </p>
+
+          <div class="quote">
+            “Tradition is not only something we preserve. It is something we carry forward.”
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+
+      <div class="section-heading reveal">
+        <span class="mini">From Idea To Pair</span>
+        <h2>The craft <em>journey.</em></h2>
+        <p>
+          A simple look at the thoughtful stages that shape the DESISTEPS experience.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <article class="process-card reveal">
+          <span class="process-number">01</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+
+          <h3>Inspiration</h3>
+
+          <p>
+            Ideas begin with Indian forms, textures, everyday life and
+            the visual language of traditional footwear.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number">02</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+
+          <h3>Design</h3>
+
+          <p>
+            Silhouettes, proportions, details and wearability are brought
+            together into a contemporary footwear direction.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number">03</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-hand-sparkles"></i>
+          </div>
+
+          <h3>Making</h3>
+
+          <p>
+            Construction and finishing receive attention so the character
+            of the design remains visible in the final pair.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number">04</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-check-double"></i>
+          </div>
+
+          <h3>Finishing</h3>
+
+          <p>
+            The final details are checked for presentation, feel and
+            consistency before the pair is ready for its next journey.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- MATERIALS -->
+    <section class="materials">
+
+      <div class="section-heading reveal">
+        <span class="mini">The Feel Of The Pair</span>
+        <h2>Materials with <em>character.</em></h2>
+        <p>
+          Materials influence not only how footwear looks, but also how it feels,
+          ages and becomes part of your everyday style.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+
+        <article class="material-card reveal">
+          <div class="material-symbol">
+            <i class="fa-solid fa-feather"></i>
+          </div>
+
+          <h3>Texture</h3>
+
+          <p>
+            Texture adds depth and gives each surface its own visual character,
+            from subtle finishes to richer traditional details.
+          </p>
+        </article>
+
+        <article class="material-card reveal">
+          <div class="material-symbol">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+
+          <h3>Structure</h3>
+
+          <p>
+            The relationship between upper, sole and supporting elements helps
+            define the shape and everyday feel of a footwear style.
+          </p>
+        </article>
+
+        <article class="material-card reveal">
+          <div class="material-symbol">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+
+          <h3>Finish</h3>
+
+          <p>
+            Small finishing choices can change the personality of a pair,
+            bringing together heritage-inspired detail and a polished look.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- DETAIL -->
+    <section class="detail-band">
+
+      <div class="detail-wrap">
+
+        <div class="detail-copy reveal">
+
+          <span class="mini">The Small Things</span>
+
+          <h2>
+            Good craft lives in the
+            <span>details.</span>
+          </h2>
+
+          <p>
+            A beautiful pair is not only about the first impression.
+            It is about the details that continue to make sense as you wear it.
+          </p>
+
+          <ul class="detail-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Thoughtful proportions and silhouettes
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Details inspired by Indian footwear traditions
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Attention to finishing and presentation
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Designs intended for modern everyday wardrobes
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="detail-art reveal">
+
+          <div class="needle"></div>
+          <div class="thread-line"></div>
+
+          <div class="detail-seal">
+            <div>
+              <i class="fa-solid fa-fingerprint"></i>
+              <br>
+              Made
+              <br>
+              With
+              <br>
+              Intention
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- VALUES -->
+    <section class="values">
+
+      <div class="section-heading reveal">
+        <span class="mini">What We Value</span>
+        <h2>Three ideas behind every <em>step.</em></h2>
+      </div>
+
+      <div class="value-grid">
+
+        <article class="value-card reveal">
+          <div class="value-icon">
+            <i class="fa-solid fa-landmark"></i>
+          </div>
+
+          <h3>Indian Roots</h3>
+
+          <p>
+            We draw inspiration from the shapes, stories, textures and
+            visual identity of Indian footwear traditions.
+          </p>
+        </article>
+
+        <article class="value-card reveal">
+          <div class="value-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+
+          <h3>Modern Expression</h3>
+
+          <p>
+            Heritage-inspired ideas are interpreted for contemporary
+            wardrobes, occasions and personal style.
+          </p>
+        </article>
+
+        <article class="value-card reveal">
+          <div class="value-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <h3>Wear With Feeling</h3>
+
+          <p>
+            A pair should feel personal — something you enjoy reaching for,
+            styling and carrying into everyday moments.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div class="cta-inner reveal">
+
+        <span class="mini">Carry The Story Forward</span>
+
+        <h2>Find your next pair.</h2>
+
+        <p>
+          Explore DESISTEPS collections and discover Indian-inspired footwear
+          designed to bring tradition into your everyday steps.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="collection.html" class="btn btn-primary" style="background:#fff;color:var(--maroon);">
+            Explore Collections
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="contact.html" class="btn btn-outline"
+            style="border-color:rgba(255,255,255,.35);color:#fff;background:transparent;">
+            Talk To Us
+            <i class="fa-regular fa-message"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <strong>DESISTEPS</strong>
+        <p>
+          Indian roots. Contemporary steps. Walk your tradition.
+        </p>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="collection.html">Collections</a>
+        <a class="footer-link" href="new-arrivals.html">New Arrivals</a>
+        <a class="footer-link" href="our-story.html">Our Story</a>
+      </div>
+
+      <div>
+        <h4>Help</h4>
+        <a class="footer-link" href="craftsmanship.html">Craftsmanship</a>
+        <a class="footer-link" href="shipping.html">Shipping</a>
+        <a class="footer-link" href="returns.html">Returns</a>
+        <a class="footer-link" href="size-guide.html">Size Guide</a>
+        <a class="footer-link" href="faq.html">FAQ</a>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="mailto:hello@desisteps.in">hello@desisteps.in</a>
+        <a class="footer-link" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> DESISTEPS. All rights reserved.</span>
+      <span>Walk Your Tradition</span>
+    </div>
+
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener"
+    aria-label="Chat with DESISTEPS on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =========================
+         PRELOADER
+      ========================= */
+
+      const preloader = document.getElementById("preloader");
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          preloader.classList.add("hide");
+        }, 400);
+      });
+
+      setTimeout(() => {
+        preloader.classList.add("hide");
+      }, 2500);
+
+
+      /* =========================
+         NAVBAR SCROLL
+      ========================= */
+
+      const navbar = document.getElementById("navbar");
+
+      function updateNavbar() {
+        navbar.classList.toggle("scrolled", window.scrollY > 35);
+      }
+
+      updateNavbar();
+
+      window.addEventListener("scroll", updateNavbar, {
+        passive: true
+      });
+
+
+      /* =========================
+         MOBILE MENU
+      ========================= */
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+        menuBtn.innerHTML = isOpen
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+
+        document.body.classList.toggle(
+          "menu-open",
+          isOpen
+        );
+      });
+
+
+      navLinks.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuBtn.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+          document.body.classList.remove("menu-open");
+        });
+
+      });
+
+
+      /* =========================
+         ESCAPE CLOSE
+      ========================= */
+
+      document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuBtn.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+          document.body.classList.remove("menu-open");
+        }
+
+      });
+
+
+      /* =========================
+         SCROLL REVEAL
+      ========================= */
+
+      const revealItems =
+        document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+
+        const revealObserver =
+          new IntersectionObserver(
+            (entries, observer) => {
+
+              entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                  entry.target.classList.add("visible");
+
+                  observer.unobserve(entry.target);
+                }
+
+              });
+
+            },
+            {
+              threshold: .12
+            }
+          );
+
+        revealItems.forEach(item => {
+          revealObserver.observe(item);
+        });
+
+      } else {
+
+        revealItems.forEach(item => {
+          item.classList.add("visible");
+        });
+
+      }
+
+
+      /* =========================
+         SMOOTH ANCHOR LINKS
+      ========================= */
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+          const targetId =
+            link.getAttribute("href");
+
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+            return;
+          }
+
+          const target =
+            document.querySelector(targetId);
+
+          if (target) {
+
+            event.preventDefault();
+
+            const navHeight =
+              navbar.offsetHeight;
+
+            const targetTop =
+              target.getBoundingClientRect().top +
+              window.scrollY -
+              navHeight -
+              15;
+
+            window.scrollTo({
+              top: targetTop,
+              behavior: "smooth"
+            });
+
+          }
+
+        });
+
+      });
+
+
+      /* =========================
+         PARALLAX CRAFT VISUAL
+      ========================= */
+
+      const craftVisual =
+        document.querySelector(".craft-visual");
+
+      const craftCard =
+        document.querySelector(".craft-card");
+
+      if (
+        craftVisual &&
+        craftCard &&
+        window.matchMedia("(pointer:fine)").matches
+      ) {
+
+        craftVisual.addEventListener("mousemove", event => {
+
+          const rect =
+            craftVisual.getBoundingClientRect();
+
+          const x =
+            (event.clientX - rect.left) /
+            rect.width -
+            .5;
+
+          const y =
+            (event.clientY - rect.top) /
+            rect.height -
+            .5;
+
+          craftCard.style.transform =
+            `rotate(${4 + x * 5}deg) translate(${x * 8}px,${y * -8}px)`;
+
+        });
+
+        craftVisual.addEventListener("mouseleave", () => {
+
+          craftCard.style.transform =
+            "rotate(4deg)";
+
+        });
+
+      }
+
+
+      /* =========================
+         CURRENT YEAR
+      ========================= */
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    });
+  </script>
+
+</body>
+
+</html>

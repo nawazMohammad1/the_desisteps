@@ -1,0 +1,5334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Shop DESISTEPS best-selling Indian footwear — Juttis, Kolhapuris, Mojaris and everyday desi styles.">
+
+  <title>Best Sellers | DESISTEPS — Walk Your Tradition</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+    /* =====================================================
+       ROOT
+    ====================================================== */
+
+    :root {
+
+      --cream: #f7f0e5;
+      --cream-light: #fffaf3;
+      --cream-dark: #eadfce;
+
+      --brown: #321b12;
+      --brown-light: #573326;
+
+      --maroon: #7d1f25;
+      --maroon-dark: #541319;
+
+      --gold: #c99b55;
+      --gold-light: #e0bd7d;
+
+      --black: #16120f;
+      --white: #ffffff;
+
+      --text: #2d211b;
+      --muted: #806e62;
+
+      --border: rgba(50, 27, 18, 0.12);
+
+      --shadow-sm:
+        0 10px 30px rgba(50, 27, 18, 0.08);
+
+      --shadow-md:
+        0 20px 50px rgba(50, 27, 18, 0.12);
+
+      --shadow-lg:
+        0 30px 90px rgba(50, 27, 18, 0.18);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --transition: 0.35s ease;
+
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family: "DM Sans", sans-serif;
+
+      background: var(--cream-light);
+
+      color: var(--text);
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+    }
+
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+
+    button {
+      border: none;
+      cursor: pointer;
+    }
+
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+
+    ::selection {
+      background: var(--maroon);
+      color: var(--white);
+    }
+
+
+    /* =====================================================
+       PRELOADER
+    ====================================================== */
+
+    .preloader {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: var(--brown);
+
+      transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+
+    }
+
+
+    .preloader.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+    }
+
+
+    .loader-content {
+      text-align: center;
+    }
+
+
+    .loader-ring {
+
+      width: 72px;
+
+      height: 72px;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(224, 189, 125, 0.3);
+
+      border-top-color: var(--gold);
+
+      animation:
+        loaderSpin 1.2s linear infinite;
+
+    }
+
+
+    .loader-logo {
+
+      color: var(--cream-light);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 26px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+    }
+
+
+    .loader-sub {
+
+      color: var(--gold-light);
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    @keyframes loaderSpin {
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      padding: 18px 5%;
+
+      background:
+        rgba(255, 250, 243, 0.88);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid transparent;
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .navbar.scrolled {
+
+      padding-top: 11px;
+
+      padding-bottom: 11px;
+
+      border-bottom-color:
+        var(--border);
+
+      box-shadow:
+        0 8px 30px rgba(50, 27, 18, 0.06);
+
+    }
+
+
+    .nav-container {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .logo {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      flex-shrink: 0;
+
+    }
+
+
+    .logo-icon {
+
+      width: 42px;
+
+      height: 42px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--maroon);
+
+      color: var(--gold-light);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 25px;
+
+      font-weight: 700;
+
+      box-shadow:
+        inset 0 0 0 1px rgba(224, 189, 125, 0.4);
+
+    }
+
+
+    .logo-text {
+
+      display: block;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      color: var(--brown);
+
+      font-size: 28px;
+
+      line-height: 1;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .logo-tagline {
+
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 22px;
+
+      flex: 1;
+
+    }
+
+
+    .nav-links a {
+
+      position: relative;
+
+      padding: 8px 0;
+
+      color: var(--brown-light);
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      white-space: nowrap;
+
+    }
+
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 0;
+
+      height: 1px;
+
+      background: var(--maroon);
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+
+      width: 100%;
+
+    }
+
+
+    .nav-links a.active {
+
+      color: var(--maroon);
+
+    }
+
+
+    .nav-actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+    }
+
+
+    .nav-icon {
+
+      width: 40px;
+
+      height: 40px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--border);
+
+      color: var(--brown);
+
+      transition: var(--transition);
+
+    }
+
+
+    .nav-icon:hover {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    .menu-toggle {
+
+      display: none;
+
+      width: 43px;
+
+      height: 43px;
+
+      border-radius: 50%;
+
+      background: var(--brown);
+
+      color: var(--white);
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      min-height: 620px;
+
+      padding:
+        155px 5% 85px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        radial-gradient(circle at 10% 25%,
+          rgba(201, 155, 85, 0.13),
+          transparent 25%),
+
+        radial-gradient(circle at 90% 70%,
+          rgba(125, 31, 37, 0.09),
+          transparent 30%),
+
+        var(--cream);
+
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 620px;
+
+      height: 620px;
+
+      right: -300px;
+
+      top: 40px;
+
+      border:
+        1px solid rgba(125, 31, 37, 0.12);
+
+      border-radius: 50%;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 440px;
+
+      height: 440px;
+
+      right: -210px;
+
+      top: 130px;
+
+      border:
+        1px dashed rgba(201, 155, 85, 0.35);
+
+      border-radius: 50%;
+
+    }
+
+
+    .hero-container {
+
+      max-width: 1250px;
+
+      min-height: 390px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr 0.9fr;
+
+      align-items: center;
+
+      gap: 80px;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 38px;
+
+      height: 1px;
+
+      background: var(--gold);
+
+    }
+
+
+    .hero h1 {
+
+      max-width: 720px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(58px, 7vw, 96px);
+
+      line-height: 0.88;
+
+      letter-spacing: -3px;
+
+      font-weight: 600;
+
+      color: var(--brown);
+
+    }
+
+
+    .hero h1 em {
+
+      color: var(--maroon);
+
+      font-style: italic;
+
+      font-weight: 500;
+
+    }
+
+
+    .hero-description {
+
+      max-width: 580px;
+
+      margin: 27px 0;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+    }
+
+
+    .btn {
+
+      min-height: 50px;
+
+      padding:
+        0 23px;
+
+      border-radius: 100px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      transition: var(--transition);
+
+    }
+
+
+    .btn-primary {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      box-shadow:
+        0 12px 28px rgba(125, 31, 37, 0.2);
+
+    }
+
+
+    .btn-primary:hover {
+
+      background: var(--maroon-dark);
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 18px 35px rgba(125, 31, 37, 0.28);
+
+    }
+
+
+    .btn-outline {
+
+      border: 1px solid var(--border);
+
+      background:
+        rgba(255, 255, 255, 0.4);
+
+      color: var(--brown);
+
+    }
+
+
+    .btn-outline:hover {
+
+      border-color: var(--gold);
+
+      transform: translateY(-3px);
+
+    }
+
+
+    /* =====================================================
+       HERO STATS
+    ====================================================== */
+
+    .hero-stats {
+
+      position: relative;
+
+      min-height: 350px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .hero-disc {
+
+      width: 310px;
+
+      height: 310px;
+
+      border-radius: 50%;
+
+      background:
+
+        radial-gradient(circle,
+          rgba(201, 155, 85, 0.2),
+          transparent 58%),
+
+        var(--brown);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: var(--cream-light);
+
+      box-shadow: var(--shadow-lg);
+
+      position: relative;
+
+      animation:
+        heroFloat 5s ease-in-out infinite;
+
+    }
+
+
+    .hero-disc::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 14px;
+
+      border:
+        1px solid rgba(224, 189, 125, 0.32);
+
+      border-radius: 50%;
+
+    }
+
+
+    .hero-disc i {
+
+      color: var(--gold-light);
+
+      font-size: 28px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .hero-disc strong {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 55px;
+
+      line-height: 0.9;
+
+      color: var(--gold-light);
+
+    }
+
+
+    .hero-disc span {
+
+      margin-top: 12px;
+
+      max-width: 150px;
+
+      color:
+        rgba(255, 250, 243, 0.65);
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .hero-mini {
+
+      position: absolute;
+
+      padding: 14px 17px;
+
+      border-radius: 14px;
+
+      background: var(--white);
+
+      color: var(--brown);
+
+      box-shadow: var(--shadow-md);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+    }
+
+
+    .hero-mini.one {
+
+      left: 0;
+
+      bottom: 17%;
+
+      animation:
+        miniFloat 4s ease-in-out infinite;
+
+    }
+
+
+    .hero-mini.two {
+
+      right: 0;
+
+      top: 15%;
+
+      animation:
+        miniFloat 4.5s ease-in-out infinite;
+
+    }
+
+
+    @keyframes heroFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+
+    }
+
+
+    @keyframes miniFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+    }
+
+
+    /* =====================================================
+       PRODUCTS SECTION
+    ====================================================== */
+
+    .products-section {
+
+      padding: 95px 5% 110px;
+
+      background: var(--cream-light);
+
+    }
+
+
+    .products-container {
+
+      max-width: 1300px;
+
+      margin: auto;
+
+    }
+
+
+    .section-heading {
+
+      text-align: center;
+
+      max-width: 700px;
+
+      margin:
+        0 auto 45px;
+
+    }
+
+
+    .section-heading .eyebrow {
+
+      justify-content: center;
+
+    }
+
+
+    .section-heading h2 {
+
+      color: var(--brown);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(44px, 5vw, 66px);
+
+      line-height: 0.95;
+
+      font-weight: 600;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .section-heading p {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+    }
+
+
+    /* =====================================================
+       FILTER BAR
+    ====================================================== */
+
+    .filter-bar {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 35px;
+
+      padding-bottom: 18px;
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .filters {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .filter-btn {
+
+      padding:
+        10px 16px;
+
+      border-radius: 100px;
+
+      background: transparent;
+
+      color: var(--muted);
+
+      border:
+        1px solid var(--border);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      transition: var(--transition);
+
+    }
+
+
+    .filter-btn:hover,
+    .filter-btn.active {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      border-color: var(--maroon);
+
+    }
+
+
+    .sort-box {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+
+    .sort-box label {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+    }
+
+
+    .sort-select {
+
+      min-height: 40px;
+
+      padding:
+        0 12px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 9px;
+
+      background: var(--white);
+
+      color: var(--brown);
+
+      outline: none;
+
+      cursor: pointer;
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ====================================================== */
+
+    .search-wrap {
+
+      position: relative;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    .search-wrap i {
+
+      position: absolute;
+
+      left: 17px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+
+    .search-input {
+
+      width: 100%;
+
+      height: 50px;
+
+      padding:
+        0 18px 0 45px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 100px;
+
+      background: var(--white);
+
+      color: var(--brown);
+
+      outline: none;
+
+      transition: 0.25s ease;
+
+    }
+
+
+    .search-input:focus {
+
+      border-color: var(--gold);
+
+      box-shadow:
+        0 0 0 4px rgba(201, 155, 85, 0.08);
+
+    }
+
+
+    /* =====================================================
+       PRODUCT GRID
+    ====================================================== */
+
+    .product-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 23px;
+
+    }
+
+
+    .product-card {
+
+      position: relative;
+
+      background: var(--white);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 21px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.3s ease;
+
+    }
+
+
+    .product-card:hover {
+
+      transform: translateY(-9px);
+
+      box-shadow: var(--shadow-md);
+
+    }
+
+
+    .product-card.hidden {
+
+      display: none;
+
+    }
+
+
+    .product-image {
+
+      height: 315px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--cream);
+
+    }
+
+
+    .product-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.7s ease;
+
+    }
+
+
+    .product-card:hover .product-image img {
+
+      transform: scale(1.07);
+
+    }
+
+
+    .badge {
+
+      position: absolute;
+
+      top: 13px;
+
+      left: 13px;
+
+      z-index: 2;
+
+      padding:
+        7px 10px;
+
+      border-radius: 100px;
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.8px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .badge.gold {
+
+      background: var(--gold);
+
+      color: var(--brown);
+
+    }
+
+
+    .wishlist {
+
+      position: absolute;
+
+      top: 13px;
+
+      right: 13px;
+
+      z-index: 3;
+
+      width: 38px;
+
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.92);
+
+      color: var(--brown);
+
+      box-shadow:
+        0 6px 20px rgba(50, 27, 18, 0.1);
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .wishlist:hover,
+    .wishlist.liked {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+    }
+
+
+    .quick-view {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 14px;
+
+      transform:
+        translate(-50%, 20px);
+
+      opacity: 0;
+
+      z-index: 3;
+
+      min-width: 130px;
+
+      min-height: 39px;
+
+      border-radius: 100px;
+
+      background: var(--white);
+
+      color: var(--brown);
+
+      box-shadow: var(--shadow-sm);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      transition: 0.35s ease;
+
+    }
+
+
+    .product-card:hover .quick-view {
+
+      transform:
+        translate(-50%, 0);
+
+      opacity: 1;
+
+    }
+
+
+    .product-info {
+
+      padding: 19px 18px 21px;
+
+    }
+
+
+    .product-category {
+
+      color: var(--maroon);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .product-title {
+
+      margin:
+        6px 0 7px;
+
+      color: var(--brown);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 25px;
+
+      line-height: 1;
+
+      font-weight: 600;
+
+    }
+
+
+    .rating {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .stars {
+
+      color: var(--gold);
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .rating-count {
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+    }
+
+
+    .product-bottom {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .price {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+    }
+
+
+    .current-price {
+
+      color: var(--brown);
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+
+    .old-price {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      text-decoration: line-through;
+
+    }
+
+
+    .discount {
+
+      color: var(--maroon);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+    }
+
+
+    .add-btn {
+
+      width: 37px;
+
+      height: 37px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--cream);
+
+      color: var(--maroon);
+
+      transition: var(--transition);
+
+    }
+
+
+    .add-btn:hover {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      transform: rotate(5deg);
+
+    }
+
+
+    /* =====================================================
+       NO RESULTS
+    ====================================================== */
+
+    .no-results {
+
+      display: none;
+
+      padding: 70px 20px;
+
+      text-align: center;
+
+      color: var(--muted);
+
+    }
+
+
+    .no-results.show {
+
+      display: block;
+
+    }
+
+
+    .no-results i {
+
+      color: var(--gold);
+
+      font-size: 35px;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .no-results h3 {
+
+      color: var(--brown);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 30px;
+
+      margin-bottom: 5px;
+
+    }
+
+
+    /* =====================================================
+       TRUST STRIP
+    ====================================================== */
+
+    .trust-section {
+
+      padding: 70px 5%;
+
+      background: var(--cream);
+
+    }
+
+
+    .trust-grid {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+    }
+
+
+    .trust-card {
+
+      padding: 25px 18px;
+
+      text-align: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255, 255, 255, 0.48);
+
+      transition: var(--transition);
+
+    }
+
+
+    .trust-card:hover {
+
+      transform: translateY(-5px);
+
+      background: var(--white);
+
+      box-shadow: var(--shadow-sm);
+
+    }
+
+
+    .trust-card i {
+
+      color: var(--maroon);
+
+      font-size: 20px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .trust-card h3 {
+
+      color: var(--brown);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 24px;
+
+      margin-bottom: 4px;
+
+    }
+
+
+    .trust-card p {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .cta-section {
+
+      padding: 105px 5%;
+
+      background: var(--cream-light);
+
+    }
+
+
+    .cta-box {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 70px 45px;
+
+      text-align: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(circle at 15% 20%,
+          rgba(224, 189, 125, 0.17),
+          transparent 25%),
+
+        linear-gradient(135deg,
+          var(--maroon-dark),
+          var(--brown));
+
+      color: var(--white);
+
+      box-shadow: var(--shadow-lg);
+
+    }
+
+
+    .cta-box::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+
+      height: 350px;
+
+      left: -180px;
+
+      top: -180px;
+
+      border:
+        1px solid rgba(224, 189, 125, 0.2);
+
+      border-radius: 50%;
+
+    }
+
+
+    .cta-box::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+
+      height: 260px;
+
+      right: -130px;
+
+      bottom: -130px;
+
+      border:
+        1px solid rgba(224, 189, 125, 0.2);
+
+      border-radius: 50%;
+
+    }
+
+
+    .cta-box>* {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .cta-box .eyebrow {
+
+      justify-content: center;
+
+      color: var(--gold-light);
+
+    }
+
+
+    .cta-box h2 {
+
+      max-width: 700px;
+
+      margin: auto;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(44px, 6vw, 72px);
+
+      line-height: 0.92;
+
+      font-weight: 600;
+
+    }
+
+
+    .cta-box p {
+
+      max-width: 600px;
+
+      margin:
+        20px auto 27px;
+
+      color:
+        rgba(255, 250, 243, 0.67);
+
+      font-size: 14px;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .footer {
+
+      padding:
+        70px 5% 25px;
+
+      background: var(--brown);
+
+      color: var(--cream-light);
+
+    }
+
+
+    .footer-container {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+    }
+
+
+    .footer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.4fr 1fr 1fr 1fr;
+
+      gap: 45px;
+
+      padding-bottom: 50px;
+
+      border-bottom:
+        1px solid rgba(255, 250, 243, 0.1);
+
+    }
+
+
+    .footer-logo {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 34px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .footer-brand p {
+
+      max-width: 350px;
+
+      margin: 18px 0;
+
+      color:
+        rgba(255, 250, 243, 0.6);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .footer-title {
+
+      margin-bottom: 17px;
+
+      color: var(--gold-light);
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+
+    .footer-links a {
+
+      color:
+        rgba(255, 250, 243, 0.63);
+
+      font-size: 12px;
+
+      transition: 0.25s ease;
+
+    }
+
+
+    .footer-links a:hover {
+
+      color: var(--gold-light);
+
+      transform: translateX(3px);
+
+    }
+
+
+    .socials {
+
+      display: flex;
+
+      gap: 8px;
+
+      margin-top: 18px;
+
+    }
+
+
+    .social {
+
+      width: 37px;
+
+      height: 37px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid rgba(255, 250, 243, 0.13);
+
+      border-radius: 50%;
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .social:hover {
+
+      background: var(--maroon);
+
+      border-color: var(--maroon);
+
+      transform: translateY(-3px);
+
+    }
+
+
+    .footer-bottom {
+
+      padding-top: 22px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color:
+        rgba(255, 250, 243, 0.42);
+
+      font-size: 10px;
+
+    }
+
+
+    .footer-bottom-links {
+
+      display: flex;
+
+      gap: 20px;
+
+    }
+
+
+    .footer-bottom-links a:hover {
+
+      color: var(--gold-light);
+
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+    ====================================================== */
+
+    .whatsapp {
+
+      position: fixed;
+
+      right: 22px;
+
+      bottom: 22px;
+
+      z-index: 900;
+
+      width: 56px;
+
+      height: 56px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #25d366;
+
+      color: var(--white);
+
+      font-size: 25px;
+
+      box-shadow:
+        0 12px 30px rgba(37, 211, 102, 0.3);
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .whatsapp:hover {
+
+      transform:
+        translateY(-5px) scale(1.05);
+
+    }
+
+
+    /* =====================================================
+       QUICK VIEW MODAL
+    ====================================================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 5000;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(22, 18, 15, 0.7);
+
+      backdrop-filter: blur(8px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition: 0.35s ease;
+
+    }
+
+
+    .modal.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+    }
+
+
+    .modal-box {
+
+      width: min(850px, 100%);
+
+      max-height: 90vh;
+
+      overflow: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1fr;
+
+      background: var(--cream-light);
+
+      border-radius: 25px;
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow-lg);
+
+      transform:
+        translateY(25px) scale(0.96);
+
+      transition: 0.4s ease;
+
+    }
+
+
+    .modal.open .modal-box {
+
+      transform:
+        translateY(0) scale(1);
+
+    }
+
+
+    .modal-image {
+
+      min-height: 430px;
+
+      background: var(--cream);
+
+    }
+
+
+    .modal-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .modal-content {
+
+      padding: 40px;
+
+      position: relative;
+
+    }
+
+
+    .modal-close {
+
+      position: absolute;
+
+      right: 18px;
+
+      top: 18px;
+
+      width: 38px;
+
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--cream);
+
+      color: var(--brown);
+
+    }
+
+
+    .modal-category {
+
+      color: var(--maroon);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .modal-title {
+
+      margin:
+        8px 0 12px;
+
+      color: var(--brown);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 42px;
+
+      line-height: 0.95;
+
+    }
+
+
+    .modal-rating {
+
+      margin-bottom: 18px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+
+    }
+
+
+    .modal-description {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .modal-price {
+
+      color: var(--brown);
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .modal-size-label {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--brown);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+    }
+
+
+    .size-options {
+
+      display: flex;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .size-option {
+
+      min-width: 43px;
+
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 8px;
+
+      background: var(--white);
+
+      color: var(--brown);
+
+      font-size: 11px;
+
+      cursor: pointer;
+
+      transition: 0.25s ease;
+
+    }
+
+
+    .size-option:hover,
+    .size-option.selected {
+
+      background: var(--maroon);
+
+      color: var(--white);
+
+      border-color: var(--maroon);
+
+    }
+
+
+    /* =====================================================
+       REVEAL
+    ====================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform: translateY(30px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    }
+
+
+    .reveal.show {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1200px) {
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .product-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .trust-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width:
+          min(330px, 85%);
+
+        height: 100vh;
+
+        padding:
+          100px 35px 40px;
+
+        background:
+          var(--cream-light);
+
+        box-shadow:
+          -20px 0 50px rgba(50, 27, 18, 0.15);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: flex-start;
+
+        gap: 5px;
+
+        transition:
+          right 0.4s ease;
+
+      }
+
+
+      .nav-links.open {
+        right: 0;
+      }
+
+
+      .nav-links a {
+
+        width: 100%;
+
+        padding: 13px 0;
+
+        font-size: 14px;
+
+      }
+
+
+      .nav-actions .nav-icon {
+        display: none;
+      }
+
+
+      .menu-toggle {
+
+        display: grid;
+
+        place-items: center;
+
+        position: relative;
+
+        z-index: 3;
+
+      }
+
+
+      .hero-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 40px;
+
+      }
+
+
+      .hero-description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+      }
+
+
+      .hero-buttons {
+
+        justify-content: center;
+
+      }
+
+
+      .hero-stats {
+        min-height: 320px;
+      }
+
+
+      .product-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .filter-bar {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+      }
+
+
+      .sort-box {
+
+        width: 100%;
+
+      }
+
+
+      .sort-select {
+
+        flex: 1;
+
+      }
+
+
+      .modal-box {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .modal-image {
+
+        min-height: 280px;
+
+        max-height: 320px;
+
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .navbar {
+        padding:
+          14px 4%;
+      }
+
+
+      .logo-text {
+        font-size: 24px;
+      }
+
+
+      .logo-tagline {
+        display: none;
+      }
+
+
+      .logo-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+      }
+
+
+      .hero {
+
+        min-height: auto;
+
+        padding:
+          125px 5% 65px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(50px, 15vw, 72px);
+
+        letter-spacing: -2px;
+
+      }
+
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+
+      .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+      }
+
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+
+      .hero-disc {
+
+        width: 260px;
+
+        height: 260px;
+
+      }
+
+
+      .hero-disc strong {
+        font-size: 48px;
+      }
+
+
+      .hero-mini.one {
+        left: -3px;
+      }
+
+
+      .hero-mini.two {
+        right: -3px;
+      }
+
+
+      .products-section {
+
+        padding:
+          75px 5% 80px;
+
+      }
+
+
+      .product-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 12px;
+
+      }
+
+
+      .product-image {
+        height: 230px;
+      }
+
+
+      .product-info {
+        padding:
+          15px 13px 17px;
+      }
+
+
+      .product-title {
+        font-size: 21px;
+      }
+
+
+      .product-category {
+        font-size: 8px;
+      }
+
+
+      .current-price {
+        font-size: 12px;
+      }
+
+
+      .old-price {
+        display: none;
+      }
+
+
+      .discount {
+        display: none;
+      }
+
+
+      .add-btn {
+
+        width: 34px;
+
+        height: 34px;
+
+      }
+
+
+      .quick-view {
+        display: none;
+      }
+
+
+      .wishlist {
+
+        width: 34px;
+
+        height: 34px;
+
+      }
+
+
+      .trust-section {
+        padding:
+          60px 5%;
+      }
+
+
+      .trust-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 10px;
+
+      }
+
+
+      .trust-card {
+        padding:
+          21px 12px;
+      }
+
+
+      .cta-section {
+        padding:
+          75px 5%;
+      }
+
+
+      .cta-box {
+        padding:
+          55px 24px;
+      }
+
+
+      .footer {
+        padding:
+          55px 5% 20px;
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+        gap:
+          35px 20px;
+
+      }
+
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+
+      .whatsapp {
+
+        width: 52px;
+
+        height: 52px;
+
+        right: 16px;
+
+        bottom: 16px;
+
+      }
+
+
+      .modal-content {
+        padding: 30px 23px;
+      }
+
+
+      .modal-title {
+        font-size: 36px;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .logo-text {
+        font-size: 21px;
+      }
+
+
+      .logo-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 21px;
+
+      }
+
+
+      .menu-toggle {
+
+        width: 40px;
+
+        height: 40px;
+
+      }
+
+
+      .product-grid {
+
+        gap: 9px;
+
+      }
+
+
+      .product-image {
+
+        height: 205px;
+
+      }
+
+
+      .product-title {
+
+        font-size: 19px;
+
+      }
+
+
+      .product-bottom {
+
+        align-items: flex-end;
+
+      }
+
+
+      .price {
+
+        display: block;
+
+      }
+
+
+      .current-price {
+        display: block;
+      }
+
+
+      .trust-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+
+      .hero-mini {
+
+        font-size: 9px;
+
+        padding:
+          11px 12px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ====================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.01ms !important;
+
+      }
+
+
+      .reveal {
+
+        opacity: 1;
+
+        transform: none;
+
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PRELOADER
+  ====================================================== -->
+
+  <div class="preloader" id="preloader">
+
+    <div class="loader-content">
+
+      <div class="loader-ring"></div>
+
+      <div class="loader-logo">
+        DESISTEPS
+      </div>
+
+      <div class="loader-sub">
+        Walk Your Tradition
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+
+      <a href="index.html" class="logo">
+
+        <span class="logo-icon">
+          द
+        </span>
+
+        <span>
+
+          <span class="logo-text">
+            DESISTEPS
+          </span>
+
+          <span class="logo-tagline">
+            Walk Your Tradition
+          </span>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="collection.html">
+          Collections
+        </a>
+
+        <a href="Best-Sellers.html" class="active">
+          Best Sellers
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="our-story.html">
+          Our Story
+        </a>
+
+        <a href="craftsmanship.html">
+          Craftsmanship
+        </a>
+
+        <a href="journal.html">
+          Journal
+        </a>
+
+        <a href="Gift-Cards.html">
+          Gift Cards
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <a href="collection.html" class="nav-icon" aria-label="Shopping bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+
+          <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+
+        <div class="reveal">
+
+          <span class="eyebrow">
+            Loved By Many
+          </span>
+
+
+          <h1>
+
+            The pairs
+            everyone is
+            <em>walking in.</em>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            From handcrafted juttis to everyday Kolhapuris,
+            discover the DESISTEPS styles our community keeps
+            coming back to.
+
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a href="#best-sellers" class="btn btn-primary">
+
+              Shop Best Sellers
+
+              <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a href="collection.html" class="btn btn-outline">
+
+              Explore All
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-stats reveal">
+
+
+          <div class="hero-disc">
+
+            <i class="fa-solid fa-star"></i>
+
+            <strong>
+              TOP
+            </strong>
+
+            <span>
+              DESISTEPS favourites,
+              chosen again and again.
+            </span>
+
+          </div>
+
+
+          <div class="hero-mini one">
+
+            <i class="fa-solid fa-heart"></i>
+
+            &nbsp; Customer favourites
+
+          </div>
+
+
+          <div class="hero-mini two">
+
+            <i class="fa-solid fa-shoe-prints"></i>
+
+            &nbsp; Desi. Timeless. Yours.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BEST SELLERS
+    ====================================================== -->
+
+    <section class="products-section" id="best-sellers">
+
+      <div class="products-container">
+
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            DESISTEPS Favourites
+          </span>
+
+          <h2>
+            Best Sellers
+          </h2>
+
+          <p>
+            The styles that keep finding their way
+            into more wardrobes, more occasions and
+            more everyday walks.
+          </p>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-wrap reveal">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="search" id="productSearch" class="search-input"
+            placeholder="Search juttis, kolhapuris, mojaris..." aria-label="Search products">
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filter-bar reveal">
+
+
+          <div class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+              All
+            </button>
+
+            <button class="filter-btn" data-filter="juttis">
+              Juttis
+            </button>
+
+            <button class="filter-btn" data-filter="kolhapuris">
+              Kolhapuris
+            </button>
+
+            <button class="filter-btn" data-filter="mojaris">
+              Mojaris
+            </button>
+
+            <button class="filter-btn" data-filter="everyday">
+              Everyday
+            </button>
+
+          </div>
+
+
+          <div class="sort-box">
+
+            <label for="sortProducts">
+              Sort:
+            </label>
+
+            <select id="sortProducts" class="sort-select">
+
+              <option value="featured">
+                Featured
+              </option>
+
+              <option value="low">
+                Price: Low to High
+              </option>
+
+              <option value="high">
+                Price: High to Low
+              </option>
+
+              <option value="rating">
+                Top Rated
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div class="product-grid" id="productGrid">
+
+
+          <!-- PRODUCT 01 -->
+
+          <article class="product-card reveal" data-category="juttis" data-title="Rajwadi Noor Jutti" data-price="2499"
+            data-rating="4.9">
+
+            <div class="product-image">
+
+              <span class="badge">
+                Bestseller
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Rajwadi Noor Jutti to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=85"
+                alt="Traditional footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="rajwadi">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Handcrafted Jutti
+              </span>
+
+              <h3 class="product-title">
+                Rajwadi Noor
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.9 · 128 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹2,499
+                  </span>
+
+                  <span class="old-price">
+                    ₹3,199
+                  </span>
+
+                  <span class="discount">
+                    22% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 02 -->
+
+          <article class="product-card reveal" data-category="kolhapuris" data-title="Classic Kolhapuri"
+            data-price="1899" data-rating="4.8">
+
+            <div class="product-image">
+
+              <span class="badge gold">
+                Most Loved
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Classic Kolhapuri to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=900&q=85"
+                alt="Leather footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="kolhapuri">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Kolhapuri
+              </span>
+
+              <h3 class="product-title">
+                Classic Kolhapuri
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.8 · 96 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹1,899
+                  </span>
+
+                  <span class="old-price">
+                    ₹2,499
+                  </span>
+
+                  <span class="discount">
+                    24% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 03 -->
+
+          <article class="product-card reveal" data-category="mojaris" data-title="Mehfil Gold Mojari" data-price="2799"
+            data-rating="4.9">
+
+            <div class="product-image">
+
+              <span class="badge">
+                Bestseller
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Mehfil Gold Mojari to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85"
+                alt="Traditional style footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="mehfil">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Mojari
+              </span>
+
+              <h3 class="product-title">
+                Mehfil Gold
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.9 · 84 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹2,799
+                  </span>
+
+                  <span class="old-price">
+                    ₹3,499
+                  </span>
+
+                  <span class="discount">
+                    20% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 04 -->
+
+          <article class="product-card reveal" data-category="everyday" data-title="Desi Daily Sandal" data-price="1499"
+            data-rating="4.7">
+
+            <div class="product-image">
+
+              <span class="badge gold">
+                Everyday
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Desi Daily Sandal to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=900&q=85"
+                alt="Casual footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="daily">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Everyday Desi
+              </span>
+
+              <h3 class="product-title">
+                Desi Daily
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.7 · 72 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹1,499
+                  </span>
+
+                  <span class="old-price">
+                    ₹1,999
+                  </span>
+
+                  <span class="discount">
+                    25% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 05 -->
+
+          <article class="product-card reveal" data-category="juttis" data-title="Gul Jahan Jutti" data-price="2299"
+            data-rating="4.8">
+
+            <div class="product-image">
+
+              <span class="badge">
+                Trending
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Gul Jahan Jutti to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85"
+                alt="Fashion footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="gul">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Jutti
+              </span>
+
+              <h3 class="product-title">
+                Gul Jahan
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.8 · 65 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹2,299
+                  </span>
+
+                  <span class="old-price">
+                    ₹2,899
+                  </span>
+
+                  <span class="discount">
+                    21% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 06 -->
+
+          <article class="product-card reveal" data-category="kolhapuris" data-title="Mitti Leather Kolhapuri"
+            data-price="2099" data-rating="4.9">
+
+            <div class="product-image">
+
+              <span class="badge gold">
+                Top Rated
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Mitti Leather Kolhapuri to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85"
+                alt="Leather shoes and footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="mitti">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Kolhapuri
+              </span>
+
+              <h3 class="product-title">
+                Mitti Leather
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.9 · 91 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹2,099
+                  </span>
+
+                  <span class="old-price">
+                    ₹2,699
+                  </span>
+
+                  <span class="discount">
+                    22% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 07 -->
+
+          <article class="product-card reveal" data-category="mojaris" data-title="Raj Tilak Mojari" data-price="3199"
+            data-rating="4.9">
+
+            <div class="product-image">
+
+              <span class="badge">
+                Bestseller
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Raj Tilak Mojari to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85"
+                alt="Premium footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="rajtilak">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Mojari
+              </span>
+
+              <h3 class="product-title">
+                Raj Tilak
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.9 · 103 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹3,199
+                  </span>
+
+                  <span class="old-price">
+                    ₹3,999
+                  </span>
+
+                  <span class="discount">
+                    20% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 08 -->
+
+          <article class="product-card reveal" data-category="everyday" data-title="Safar Everyday Slip-On"
+            data-price="1699" data-rating="4.7">
+
+            <div class="product-image">
+
+              <span class="badge gold">
+                Daily Pick
+              </span>
+
+
+              <button class="wishlist" aria-label="Add Safar Everyday Slip-On to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+
+              <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85"
+                alt="Everyday footwear" loading="lazy">
+
+
+              <button class="quick-view" data-product="safar">
+                Quick View
+              </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+              <span class="product-category">
+                Everyday Desi
+              </span>
+
+              <h3 class="product-title">
+                Safar Slip-On
+              </h3>
+
+
+              <div class="rating">
+
+                <span class="stars">
+                  ★★★★★
+                </span>
+
+                <span class="rating-count">
+                  4.7 · 58 reviews
+                </span>
+
+              </div>
+
+
+              <div class="product-bottom">
+
+                <div class="price">
+
+                  <span class="current-price">
+                    ₹1,699
+                  </span>
+
+                  <span class="old-price">
+                    ₹2,199
+                  </span>
+
+                  <span class="discount">
+                    23% OFF
+                  </span>
+
+                </div>
+
+
+                <button class="add-btn" aria-label="Add product">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="no-results" id="noResults">
+
+          <i class="fa-solid fa-shoe-prints"></i>
+
+          <h3>
+            No pair found.
+          </h3>
+
+          <p>
+            Try another search or explore a different category.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRUST
+    ====================================================== -->
+
+    <section class="trust-section">
+
+      <div class="trust-grid">
+
+
+        <div class="trust-card reveal">
+
+          <i class="fa-solid fa-hand-sparkles"></i>
+
+          <h3>
+            Crafted With Care
+          </h3>
+
+          <p>
+            Inspired by Indian craft traditions.
+          </p>
+
+        </div>
+
+
+        <div class="trust-card reveal">
+
+          <i class="fa-solid fa-shield-heart"></i>
+
+          <h3>
+            Quality First
+          </h3>
+
+          <p>
+            Designed for style and everyday wear.
+          </p>
+
+        </div>
+
+
+        <div class="trust-card reveal">
+
+          <i class="fa-solid fa-truck-fast"></i>
+
+          <h3>
+            Easy Delivery
+          </h3>
+
+          <p>
+            Convenient delivery across serviceable areas.
+          </p>
+
+        </div>
+
+
+        <div class="trust-card reveal">
+
+          <i class="fa-solid fa-headset"></i>
+
+          <h3>
+            We're Here
+          </h3>
+
+          <p>
+            Reach out whenever you need us.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta-section">
+
+      <div class="cta-box reveal">
+
+        <span class="eyebrow">
+          Your Next Favourite Pair
+        </span>
+
+
+        <h2>
+          Walk into something
+          worth remembering.
+        </h2>
+
+
+        <p>
+          Explore the pairs our community keeps choosing,
+          and find the one that feels unmistakably yours.
+        </p>
+
+
+        <a href="collection.html" class="btn btn-primary">
+
+          Explore Collection
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+            DESISTEPS
+          </div>
+
+
+          <p>
+            Indian footwear, rooted in tradition and designed
+            for the way you walk today.
+          </p>
+
+
+          <div class="socials">
+
+            <a href="#" class="social" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+
+            <a href="#" class="social" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+
+            <a href="#" class="social" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Explore
+          </div>
+
+
+          <div class="footer-links">
+
+            <a href="collection.html">
+              Collections
+            </a>
+
+            <a href="Best-Sellers.html">
+              Best Sellers
+            </a>
+
+            <a href="new-arrivals.html">
+              New Arrivals
+            </a>
+
+            <a href="craftsmanship.html">
+              Craftsmanship
+            </a>
+
+            <a href="journal.html">
+              Journal
+            </a>
+
+            <a href="Gift-Cards.html">
+              Gift Cards
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Help
+          </div>
+
+
+          <div class="footer-links">
+
+            <a href="shipping.html">
+              Shipping
+            </a>
+
+            <a href="returns.html">
+              Returns
+            </a>
+
+            <a href="size-guide.html">
+              Size Guide
+            </a>
+
+            <a href="faq.html">
+              FAQ
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            DESISTEPS
+          </div>
+
+
+          <div class="footer-links">
+
+            <a href="our-story.html">
+              Our Story
+            </a>
+
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+            <a href="craftsmanship.html">
+              Our Craft
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          ©
+          <span id="year"></span>
+          DESISTEPS. All rights reserved.
+        </span>
+
+
+        <div class="footer-bottom-links">
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       WHATSAPP
+  ====================================================== -->
+
+  <a href="https://wa.me/919999999999?text=Hi%20DESISTEPS%2C%20I%20want%20to%20shop%20your%20best%20sellers."
+    class="whatsapp" target="_blank" rel="noopener" aria-label="Chat with DESISTEPS on WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+
+  <!-- =====================================================
+       QUICK VIEW MODAL
+  ====================================================== -->
+
+  <div class="modal" id="quickModal" aria-hidden="true">
+
+    <div class="modal-box">
+
+
+      <div class="modal-image">
+
+        <img id="modalImage" src="" alt="">
+
+      </div>
+
+
+      <div class="modal-content">
+
+
+        <button class="modal-close" id="modalClose" aria-label="Close">
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <span class="modal-category" id="modalCategory">
+          Footwear
+        </span>
+
+
+        <h2 class="modal-title" id="modalTitle">
+          Product
+        </h2>
+
+
+        <div class="modal-rating">
+
+          ★★★★★
+          <span id="modalRating">
+            4.9
+          </span>
+
+        </div>
+
+
+        <p class="modal-description" id="modalDescription">
+          A DESISTEPS favourite inspired by
+          Indian footwear traditions.
+        </p>
+
+
+        <div class="modal-price" id="modalPrice">
+          ₹2,499
+        </div>
+
+
+        <span class="modal-size-label">
+          Choose Size
+        </span>
+
+
+        <div class="size-options">
+
+          <button class="size-option">
+            5
+          </button>
+
+          <button class="size-option">
+            6
+          </button>
+
+          <button class="size-option">
+            7
+          </button>
+
+          <button class="size-option">
+            8
+          </button>
+
+          <button class="size-option">
+            9
+          </button>
+
+          <button class="size-option">
+            10
+          </button>
+
+        </div>
+
+
+        <a href="contact.html" class="btn btn-primary" style="width:100%;">
+
+          Ask About This Pair
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* =====================================================
+       PRELOADER
+    ====================================================== */
+
+    window.addEventListener("load", () => {
+
+      const preloader =
+        document.getElementById("preloader");
+
+      setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+      }, 500);
+
+    });
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    const navbar =
+      document.getElementById("navbar");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 40) {
+
+        navbar.classList.add("scrolled");
+
+      } else {
+
+        navbar.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuToggle.addEventListener("click", () => {
+
+      const open =
+        navLinks.classList.toggle("open");
+
+
+      document.body.classList.toggle(
+        "menu-open",
+        open
+      );
+
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        open
+      );
+
+
+      menuToggle.innerHTML = open
+
+        ? '<i class="fa-solid fa-xmark"></i>'
+
+        : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+    document.querySelectorAll(
+      ".nav-links a"
+    ).forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          navLinks.classList.remove("open");
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+        }
+      );
+
+    });
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+
+          navLinks.classList.remove("open");
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       FILTERING
+    ====================================================== */
+
+    const filterButtons =
+      document.querySelectorAll(
+        ".filter-btn"
+      );
+
+    const productCards =
+      [...document.querySelectorAll(
+        ".product-card"
+      )];
+
+    const searchInput =
+      document.getElementById(
+        "productSearch"
+      );
+
+    const noResults =
+      document.getElementById(
+        "noResults"
+      );
+
+
+    let currentFilter = "all";
+
+
+    function filterProducts() {
+
+      const searchTerm =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+
+      let visibleCount = 0;
+
+
+      productCards.forEach(card => {
+
+        const category =
+          card.dataset.category;
+
+        const title =
+          card.dataset.title
+            .toLowerCase();
+
+
+        const categoryMatch =
+          currentFilter === "all" ||
+          category === currentFilter;
+
+
+        const searchMatch =
+          title.includes(searchTerm) ||
+          category.includes(searchTerm);
+
+
+        if (
+          categoryMatch &&
+          searchMatch
+        ) {
+
+          card.classList.remove(
+            "hidden"
+          );
+
+          visibleCount++;
+
+        } else {
+
+          card.classList.add(
+            "hidden"
+          );
+
+        }
+
+      });
+
+
+      noResults.classList.toggle(
+        "show",
+        visibleCount === 0
+      );
+
+    }
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          filterButtons.forEach(
+            item =>
+              item.classList.remove(
+                "active"
+              )
+          );
+
+
+          button.classList.add(
+            "active"
+          );
+
+
+          currentFilter =
+            button.dataset.filter;
+
+
+          filterProducts();
+
+        }
+      );
+
+    });
+
+
+    searchInput.addEventListener(
+      "input",
+      filterProducts
+    );
+
+
+    /* =====================================================
+       SORTING
+    ====================================================== */
+
+    const sortProducts =
+      document.getElementById(
+        "sortProducts"
+      );
+
+    const productGrid =
+      document.getElementById(
+        "productGrid"
+      );
+
+
+    sortProducts.addEventListener(
+      "change",
+      () => {
+
+        const value =
+          sortProducts.value;
+
+
+        const sorted =
+          [...productCards].sort(
+            (a, b) => {
+
+              if (value === "low") {
+
+                return (
+                  Number(a.dataset.price) -
+                  Number(b.dataset.price)
+                );
+
+              }
+
+
+              if (value === "high") {
+
+                return (
+                  Number(b.dataset.price) -
+                  Number(a.dataset.price)
+                );
+
+              }
+
+
+              if (value === "rating") {
+
+                return (
+                  Number(b.dataset.rating) -
+                  Number(a.dataset.rating)
+                );
+
+              }
+
+
+              return 0;
+
+            }
+          );
+
+
+        sorted.forEach(card => {
+
+          productGrid.appendChild(
+            card
+          );
+
+        });
+
+
+        filterProducts();
+
+      }
+    );
+
+
+    /* =====================================================
+       WISHLIST
+    ====================================================== */
+
+    document.querySelectorAll(
+      ".wishlist"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        event => {
+
+          event.stopPropagation();
+
+
+          button.classList.toggle(
+            "liked"
+          );
+
+
+          const icon =
+            button.querySelector("i");
+
+
+          if (
+            button.classList.contains(
+              "liked"
+            )
+          ) {
+
+            icon.className =
+              "fa-solid fa-heart";
+
+          } else {
+
+            icon.className =
+              "fa-regular fa-heart";
+
+          }
+
+        }
+      );
+
+    });
+
+
+    /* =====================================================
+       ADD BUTTON
+    ====================================================== */
+
+    document.querySelectorAll(
+      ".add-btn"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const original =
+            button.innerHTML;
+
+
+          button.innerHTML =
+            '<i class="fa-solid fa-check"></i>';
+
+
+          button.style.background =
+            "var(--maroon)";
+
+          button.style.color =
+            "var(--white)";
+
+
+          setTimeout(() => {
+
+            button.innerHTML =
+              original;
+
+            button.style.background = "";
+
+            button.style.color = "";
+
+          }, 1200);
+
+        }
+      );
+
+    });
+
+
+    /* =====================================================
+       QUICK VIEW DATA
+    ====================================================== */
+
+    const products = {
+
+      rajwadi: {
+
+        title: "Rajwadi Noor",
+
+        category: "Handcrafted Jutti",
+
+        price: "₹2,499",
+
+        rating: "4.9",
+
+        image:
+          "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A statement-inspired DESISTEPS jutti designed around the beauty of Indian occasion dressing."
+
+      },
+
+
+      kolhapuri: {
+
+        title: "Classic Kolhapuri",
+
+        category: "Kolhapuri",
+
+        price: "₹1,899",
+
+        rating: "4.8",
+
+        image:
+          "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A timeless everyday-inspired silhouette with the easy character of traditional Indian footwear."
+
+      },
+
+
+      mehfil: {
+
+        title: "Mehfil Gold",
+
+        category: "Mojari",
+
+        price: "₹2,799",
+
+        rating: "4.9",
+
+        image:
+          "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A celebration-ready pair designed to bring a refined traditional touch to special occasions."
+
+      },
+
+
+      daily: {
+
+        title: "Desi Daily",
+
+        category: "Everyday Desi",
+
+        price: "₹1,499",
+
+        rating: "4.7",
+
+        image:
+          "https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "An easy everyday footwear choice for relaxed styling and daily movement."
+
+      },
+
+
+      gul: {
+
+        title: "Gul Jahan",
+
+        category: "Jutti",
+
+        price: "₹2,299",
+
+        rating: "4.8",
+
+        image:
+          "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A feminine-inspired jutti concept made for adding a little colour and character to your look."
+
+      },
+
+
+      mitti: {
+
+        title: "Mitti Leather",
+
+        category: "Kolhapuri",
+
+        price: "₹2,099",
+
+        rating: "4.9",
+
+        image:
+          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A grounded footwear style inspired by earthy Indian aesthetics and everyday dressing."
+
+      },
+
+
+      rajtilak: {
+
+        title: "Raj Tilak",
+
+        category: "Mojari",
+
+        price: "₹3,199",
+
+        rating: "4.9",
+
+        image:
+          "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A refined statement pair for festive occasions, celebrations and dressed-up evenings."
+
+      },
+
+
+      safar: {
+
+        title: "Safar Slip-On",
+
+        category: "Everyday Desi",
+
+        price: "₹1,699",
+
+        rating: "4.7",
+
+        image:
+          "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85",
+
+        description:
+          "A relaxed everyday silhouette designed for easy styling and comfortable movement."
+
+      }
+
+    };
+
+
+    /* =====================================================
+       QUICK VIEW MODAL
+    ====================================================== */
+
+    const quickModal =
+      document.getElementById(
+        "quickModal"
+      );
+
+    const modalClose =
+      document.getElementById(
+        "modalClose"
+      );
+
+    const modalImage =
+      document.getElementById(
+        "modalImage"
+      );
+
+    const modalTitle =
+      document.getElementById(
+        "modalTitle"
+      );
+
+    const modalCategory =
+      document.getElementById(
+        "modalCategory"
+      );
+
+    const modalPrice =
+      document.getElementById(
+        "modalPrice"
+      );
+
+    const modalRating =
+      document.getElementById(
+        "modalRating"
+      );
+
+    const modalDescription =
+      document.getElementById(
+        "modalDescription"
+      );
+
+
+    document.querySelectorAll(
+      ".quick-view"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        event => {
+
+          event.stopPropagation();
+
+
+          const key =
+            button.dataset.product;
+
+
+          const product =
+            products[key];
+
+
+          if (!product) {
+            return;
+          }
+
+
+          modalImage.src =
+            product.image;
+
+
+          modalImage.alt =
+            product.title;
+
+
+          modalTitle.textContent =
+            product.title;
+
+
+          modalCategory.textContent =
+            product.category;
+
+
+          modalPrice.textContent =
+            product.price;
+
+
+          modalRating.textContent =
+            product.rating;
+
+
+          modalDescription.textContent =
+            product.description;
+
+
+          quickModal.classList.add(
+            "open"
+          );
+
+
+          quickModal.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+
+          document.body.style.overflow =
+            "hidden";
+
+        }
+      );
+
+    });
+
+
+    function closeModal() {
+
+      quickModal.classList.remove(
+        "open"
+      );
+
+
+      quickModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    modalClose.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    quickModal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target ===
+          quickModal
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          quickModal.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SIZE SELECTION
+    ====================================================== */
+
+    document.querySelectorAll(
+      ".size-option"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          document
+            .querySelectorAll(
+              ".size-option"
+            )
+            .forEach(
+              item =>
+                item.classList.remove(
+                  "selected"
+                )
+            );
+
+
+          button.classList.add(
+            "selected"
+          );
+
+        }
+      );
+
+    });
+
+
+    /* =====================================================
+       REVEAL ANIMATION
+    ====================================================== */
+
+    const revealElements =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "show"
+              );
+
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+
+    revealElements.forEach(
+      element => {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ====================================================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =====================================================
+       ESCAPE SEARCH
+    ====================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          document.activeElement ===
+          searchInput
+        ) {
+
+          searchInput.value = "";
+
+          filterProducts();
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       INITIAL FILTER
+    ====================================================== */
+
+    filterProducts();
+
+  </script>
+
+</body>
+
+</html>

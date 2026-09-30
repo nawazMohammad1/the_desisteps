@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Explore sneakers, running shoes, casual shoes, formal shoes, sports shoes and more at DesiSteps.">
+
+  <meta name="theme-color" content="#321b12">
+
+  <title>Shoes Collection | DESISTEPS</title>
+
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- =====================================================
+       FONT AWESOME
+       ===================================================== -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- =====================================================
+       SHOES CSS
+       ===================================================== -->
+
+  <link rel="stylesheet" href="css/shoes.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       PRELOADER
+       ===================================================== -->
+
+  <div class="preloader" id="preloader" aria-label="Loading DESISTEPS">
+    <span class="loader-mark">द</span>
+    <span>DESISTEPS</span>
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <!-- BRAND -->
+
+      <a href="index.html" class="brand" aria-label="DESISTEPS Home">
+
+        <span class="brand-symbol">द</span>
+
+        <span class="brand-text">
+          <strong>
+            DESI<span>STEPS</span>
+          </strong>
+
+          <small>
+            WALK YOUR TRADITION
+          </small>
+        </span>
+
+      </a>
+
+
+      <!-- DESKTOP NAVIGATION -->
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="collection.html">
+          Collections
+        </a>
+
+        <a href="shoes.html" class="active" aria-current="page">
+          Shoes
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="about.html">
+          Our Story
+        </a>
+
+      </nav>
+
+
+      <!-- NAV ACTIONS -->
+
+      <div class="nav-actions">
+
+        <!-- SEARCH -->
+
+        <button class="icon-btn search-trigger" type="button" aria-label="Search shoes">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+
+        <!-- WISHLIST -->
+
+        <button class="icon-btn" id="wishlistLink" type="button" aria-label="Wishlist" aria-pressed="false">
+
+          <i class="fa-regular fa-heart"></i>
+
+          <span class="count wishlist-count" aria-label="Wishlist items">
+            0
+          </span>
+
+        </button>
+
+
+        <!-- SHOPPING BAG -->
+
+        <button class="icon-btn" id="bagLink" type="button" aria-label="Shopping bag">
+
+          <i class="fa-solid fa-bag-shopping"></i>
+
+          <span class="count bag-count" aria-label="Shopping bag items">
+            0
+          </span>
+
+        </button>
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="collection.html">
+        Collections
+      </a>
+
+      <a href="shoes.html" class="active" aria-current="page">
+        Shoes
+      </a>
+
+      <a href="new-arrivals.html">
+        New Arrivals
+      </a>
+
+      <a href="about.html">
+        Our Story
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =====================================================
+       SEARCH OVERLAY
+       ===================================================== -->
+
+  <div class="search-overlay" role="dialog" aria-modal="true" aria-label="Search shoes">
+
+    <button class="close-search" type="button" aria-label="Close search">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="search-panel">
+
+      <span class="eyebrow">
+        FIND YOUR NEXT PAIR
+      </span>
+
+      <h2>
+        Search shoes.
+      </h2>
+
+      <div class="search-field">
+
+        <input id="shoeSearch" type="search" placeholder="Try sneakers, running, formal..." autocomplete="off"
+          aria-label="Search shoes">
+
+        <button id="searchButton" type="button" aria-label="Search products">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+      <p>
+        Find your style, one step at a time.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="shoes-hero" id="shoesHero">
+
+      <div class="hero-grain" aria-hidden="true"></div>
+
+
+      <!-- HERO COPY -->
+
+      <div class="hero-copy reveal">
+
+        <span class="eyebrow">
+          DESISTEPS / THE SHOE EDIT
+        </span>
+
+        <h1>
+          Every step.
+          <em>Every style.</em>
+        </h1>
+
+        <p>
+          From everyday essentials to statement sneakers,
+          discover shoes that move with your life.
+        </p>
+
+        <a href="#all-shoes" class="primary-btn">
+          EXPLORE ALL SHOES
+
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+
+        <div class="hero-note">
+
+          <span class="note-line" aria-hidden="true"></span>
+
+          <span>
+            MADE FOR YOUR EVERYDAY
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+
+      <div class="hero-visual">
+
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+
+        <div class="hero-image">
+
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1100&q=85"
+            alt="Bold red athletic sneaker" fetchpriority="high">
+
+        </div>
+
+
+        <div class="hero-sticker">
+
+          <span>
+            STEP
+          </span>
+
+          <strong>
+            INTO<br>
+            YOUR<br>
+            STYLE
+          </strong>
+
+          <i class="fa-solid fa-arrow-down-right"></i>
+
+        </div>
+
+
+        <span class="hero-side-text">
+          THE EVERYDAY SHOE COLLECTION
+        </span>
+
+      </div>
+
+
+      <!-- HERO FOOTER -->
+
+      <div class="hero-bottom">
+
+        <span>
+          01 — THE SHOE COLLECTION
+        </span>
+
+        <span>
+          DESIGNED FOR EVERY JOURNEY
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CATEGORY STRIP
+         =================================================== -->
+
+    <section class="category-strip" aria-label="Shoe categories">
+
+      <a href="#all-shoes" class="category-tile" data-category-link="sneakers">
+
+        <span class="category-icon">
+          <i class="fa-solid fa-shoe-prints"></i>
+        </span>
+
+        <span>
+          Sneakers
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+
+      <a href="#all-shoes" class="category-tile" data-category-link="running">
+
+        <span class="category-icon">
+          <i class="fa-solid fa-person-running"></i>
+        </span>
+
+        <span>
+          Running
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+
+      <a href="#all-shoes" class="category-tile" data-category-link="casual">
+
+        <span class="category-icon">
+          <i class="fa-solid fa-person-walking"></i>
+        </span>
+
+        <span>
+          Casual
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+
+      <a href="#all-shoes" class="category-tile" data-category-link="formal">
+
+        <span class="category-icon">
+          <i class="fa-solid fa-user-tie"></i>
+        </span>
+
+        <span>
+          Formal
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+
+      <a href="#all-shoes" class="category-tile" data-category-link="sports">
+
+        <span class="category-icon">
+          <i class="fa-solid fa-basketball"></i>
+        </span>
+
+        <span>
+          Sports
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+    </section>
+
+
+    <!-- ===================================================
+         PRODUCTS
+         =================================================== -->
+
+    <section class="products-section" id="all-shoes">
+
+      <!-- SECTION HEADING -->
+
+      <div class="section-heading reveal">
+
+        <div>
+
+          <span class="eyebrow">
+            THE COMPLETE SHOE EDIT
+          </span>
+
+          <h2>
+            Find your
+            <em>next pair.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          Everyday comfort. Weekend energy.
+          Shoes for wherever life takes you.
+        </p>
+
+      </div>
+
+
+      <!-- SHOP TOOLBAR -->
+
+      <div class="shop-toolbar">
+
+        <div class="filter-list" role="group" aria-label="Filter shoes">
+
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">
+            All Shoes
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="sneakers" aria-pressed="false">
+            Sneakers
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="running" aria-pressed="false">
+            Running
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="casual" aria-pressed="false">
+            Casual
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="formal" aria-pressed="false">
+            Formal
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="sports" aria-pressed="false">
+            Sports
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="slip-ons" aria-pressed="false">
+            Slip-ons
+          </button>
+
+        </div>
+
+
+        <div class="product-total">
+          <span id="productCount">12</span>
+          PRODUCTS
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT GRID -->
+
+      <div class="product-grid">
+
+
+        <!-- ===============================================
+             PRODUCT 01
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="sneakers" data-name="Urban Motion Sneakers">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              BESTSELLER
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Urban Motion Sneakers to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+              alt="Red athletic sneakers" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Urban Motion Sneakers">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>
+              Urban Motion
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,799
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 02
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="running" data-name="Cloud Sprint Running Shoes">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              LIGHTWEIGHT
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Cloud Sprint to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=85"
+              alt="Running shoes for everyday training" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Cloud Sprint Running Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Running
+            </span>
+
+            <h3>
+              Cloud Sprint
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,199
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 03
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="casual" data-name="Everyday Canvas Shoes">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Everyday Canvas Shoes to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85"
+              alt="Classic casual canvas shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Everyday Canvas Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Casual
+            </span>
+
+            <h3>
+              Everyday Canvas
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,299
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 04
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="formal" data-name="Classic Oxford Formal Shoes">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              CLASSIC
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Classic Oxford to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img
+              src="https://images.pexels.com/photos/8670488/pexels-photo-8670488.jpeg?auto=compress&cs=tinysrgb&w=900&q=85"
+              alt="Classic formal brown leather Oxford shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Classic Oxford Formal Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Formal
+            </span>
+
+            <h3>
+              Classic Oxford
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,499
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 05
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="sneakers" data-name="Retro Street High Tops">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              NEW
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Retro Street High Tops to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85"
+              alt="Modern streetwear sneakers" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Retro Street High Tops">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>
+              Retro Street
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,099
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 06
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="sports" data-name="Power Play Sports Shoes">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Power Play Sports Shoes to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=85"
+              alt="Performance sports shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Power Play Sports Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sports
+            </span>
+
+            <h3>
+              Power Play
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,299
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 07
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="slip-ons" data-name="Easy Day Slip-ons">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              EASY WEAR
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Easy Day Slip-ons to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=900&q=85"
+              alt="Comfortable slip-on shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Easy Day Slip-ons">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Slip-ons
+            </span>
+
+            <h3>
+              Easy Day
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹999
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.5
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 08
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="casual" data-name="Weekend Walk Casual Shoes">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Weekend Walk to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85"
+              alt="Casual everyday footwear" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Weekend Walk Casual Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Casual
+            </span>
+
+            <h3>
+              Weekend Walk
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,499
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 09
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="running" data-name="Velocity Runner">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              ACTIVE
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Velocity Runner to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85"
+              alt="Sporty running footwear" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Velocity Runner">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Running
+            </span>
+
+            <h3>
+              Velocity Runner
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,899
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 10
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="formal" data-name="Executive Derby Shoes">
+
+          <div class="product-image">
+
+            <button class="wishlist-product" type="button" aria-label="Add Executive Derby to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=900&q=85"
+              alt="Polished formal shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Executive Derby Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Formal
+            </span>
+
+            <h3>
+              Executive Derby
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,699
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 11
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="sneakers" data-name="Mono Street Sneakers">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              TRENDING
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add Mono Street Sneakers to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85"
+              alt="Minimal street-style shoes" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="Mono Street Sneakers">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>
+              Mono Street
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹1,699
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PRODUCT 12
+             =============================================== -->
+
+        <article class="product-card reveal" data-category="sports" data-name="All Terrain Active Shoes">
+
+          <div class="product-image">
+
+            <span class="product-badge">
+              OUTDOOR
+            </span>
+
+            <button class="wishlist-product" type="button" aria-label="Add All Terrain Active Shoes to wishlist"
+              aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <img
+              src="https://images.pexels.com/photos/29603275/pexels-photo-29603275.jpeg?auto=compress&cs=tinysrgb&w=900&q=85"
+              alt="Outdoor active trail running footwear" loading="lazy">
+
+            <button class="quick-add" type="button" data-product="All Terrain Active Shoes">
+              ADD TO BAG
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sports
+            </span>
+
+            <h3>
+              All Terrain
+            </h3>
+
+            <div class="product-bottom">
+
+              <strong>
+                ₹2,399
+              </strong>
+
+              <span>
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NO RESULTS -->
+
+      <p class="no-results" id="noResults" hidden aria-live="polite">
+        No shoes found.
+        Try another search or category.
+      </p>
+
+    </section>
+
+
+    <!-- ===================================================
+         BRAND BANNER
+         =================================================== -->
+
+    <section class="brand-banner">
+
+      <div class="banner-decoration" aria-hidden="true">
+        द
+      </div>
+
+      <div class="banner-content reveal">
+
+        <span class="eyebrow">
+          YOUR JOURNEY, YOUR RULES
+        </span>
+
+        <h2>
+          Good shoes.
+          <br>
+          <em>Great journeys.</em>
+        </h2>
+
+        <p>
+          Find your everyday favourite and make every step count.
+        </p>
+
+        <a href="#all-shoes" class="light-btn">
+          FIND YOUR PAIR
+
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+         =================================================== -->
+
+    <section class="newsletter">
+
+      <div class="newsletter-content reveal">
+
+        <span class="eyebrow">
+          THE DESISTEPS LETTER
+        </span>
+
+        <h2>
+          A little style
+          <br>
+          <em>in your inbox.</em>
+        </h2>
+
+        <p>
+          Get updates on new arrivals, fresh styles and special offers.
+        </p>
+
+
+        <form id="newsletterForm" class="newsletter-form" novalidate>
+
+          <input id="newsletterEmail" type="email" placeholder="Enter your email address" autocomplete="email" required
+            aria-label="Email address">
+
+          <button type="submit">
+            SUBSCRIBE
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </form>
+
+
+        <span class="newsletter-message" id="newsletterMessage" aria-live="polite"></span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-main">
+
+
+      <!-- FOOTER BRAND -->
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand" aria-label="DESISTEPS Home">
+
+          <span class="brand-symbol">
+            द
+          </span>
+
+          <span class="brand-text">
+
+            <strong>
+              DESI<span>STEPS</span>
+            </strong>
+
+            <small>
+              WALK YOUR TRADITION
+            </small>
+
+          </span>
+
+        </a>
+
+        <p>
+          Indian roots. Modern steps.
+          Made for your journey.
+        </p>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-links">
+
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SHOP -->
+
+      <div class="footer-column">
+
+        <h4>
+          SHOP
+        </h4>
+
+        <a href="collection.html">
+          All Collections
+        </a>
+
+        <a href="shoes.html">
+          Shoes
+        </a>
+
+        <a href="new-arrivals.html">
+          New Arrivals
+        </a>
+
+        <a href="collection.html">
+          Traditional Wear
+        </a>
+
+      </div>
+
+
+      <!-- DISCOVER -->
+
+      <div class="footer-column">
+
+        <h4>
+          DISCOVER
+        </h4>
+
+        <a href="about.html">
+          Our Story
+        </a>
+
+        <a href="size-guide.html">
+          Size Guide
+        </a>
+
+        <a href="faq.html">
+          FAQs
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <!-- FOLLOW -->
+
+      <div class="footer-column">
+
+        <h4>
+          FOLLOW US
+        </h4>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          Pinterest
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 DESISTEPS.
+        ALL RIGHTS RESERVED.
+      </span>
+
+      <span>
+        MADE WITH
+        <i class="fa-solid fa-heart"></i>
+        IN INDIA
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       CART TOAST
+       ===================================================== -->
+
+  <div class="cart-toast" role="status" aria-live="polite">
+
+    <span class="toast-check">
+      <i class="fa-solid fa-check"></i>
+    </span>
+
+    <span>
+
+      <strong>
+        Added to your bag
+      </strong>
+
+      <small class="toast-product"></small>
+
+    </span>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="js/shoes.js"></script>
+
+</body>
+
+</html>
